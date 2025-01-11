@@ -20,13 +20,17 @@ int BinarySearch(int arr[],int size ,int target , int mid, int l,int r){
 }
 
 int main(){
-    int arr[]={10,20,30,40,50};
-    int size=sizeof(arr)/sizeof(arr[0]);
+    int size;
+    cout<<"Enter the size of array ";
+    cin>>size;
+    int arr[size];
+    cout<<"Enter the elements of array ";
+    for(int i=0;i<size;i++){
+        cin>>arr[i];
+    }
     int target,mid,l,r;
-
-
     cout<<"Enter the element to search ";
-    cin>>target;
+    cin>>   target;
     cout<<"Size of array is "<<size<<endl;
 
     int result = BinarySearch(arr,size,target,mid,l,r);
