@@ -16,6 +16,8 @@ using namespace std;
         arr[j+1]=key;
          cout << "\narr[j+1] = "<<arr[j+1]; 
         }
+        cout << "\narr[j+1] = "<<arr[j+1]; 
+        }
         }
 
 int main()

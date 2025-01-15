@@ -1,3 +1,4 @@
-import string 
-b=int(input("Enter the size of the array"))
-tring a =input("Enter the string :")
+s = input("Enter a string: ")
+string_length = sum(1 for _ in s)
+print("Length of the string:", string_length)
+
