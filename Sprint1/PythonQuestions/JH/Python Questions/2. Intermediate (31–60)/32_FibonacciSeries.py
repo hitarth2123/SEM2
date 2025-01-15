@@ -1,10 +1,6 @@
-def fibonacci(n):
-    fib_sequence = [0, 1]
-    while len(fib_sequence) < n:
-        fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
-    return fib_sequence[:n]
-
-n = int(input("\nEnter the number of Fibonacci numbers to generate: "))
-print("\nThe Fibonacci series up to", n, "is:", fibonacci(n))
-
-
+n = int(input("Enter the number of Fibonacci numbers to display: "))
+a, b = 0, 1
+print("Fibonacci sequence:")
+for _ in range(n):
+    print(a, end=" ")
+    a, b = b, a + b
