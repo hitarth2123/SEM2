@@ -1,10 +1,10 @@
-a=int(input("Enter first number :"))
-b=int(input("Enter second number :"))
+a=int(input("\nEnter first number :"))
+b=int(input("\nEnter second number :"))
 sum=a+b
-print("Sum of two numbers is :",sum)
+print("\nSum of two numbers is :",sum)
 sub=a-b
-print("Subtraction of two numbers is :",sub)
+print("\nSubtraction of two numbers is :",sub)
 mul=a*b
-print("Multiplication of two numbers is :",mul)
+print("\nMultiplication of two numbers is :",mul)
 div=a/b
-print("Division of two numbers is :",div)
+print("\nDivision of two numbers is :",div)

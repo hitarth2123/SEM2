@@ -1,6 +1,6 @@
-principal = float(input("Enter the principal amount: "))
-rate = float(input("Enter the rate of interest: "))
-time = float(input("Enter the time period: "))
+principal = float(input("\nEnter the principal amount: "))
+rate = float(input("\nEnter the rate of interest: "))
+time = float(input("\nEnter the time period: "))
 si = (principal * rate * time) / 100
-print("The simple interest is: ", si)
+print("\nThe simple interest is: ", si)
 

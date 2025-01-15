@@ -4,9 +4,9 @@ def power(base, exponent):
         result *= base
     return result
 
-base = float(input("Enter the base: "))
-exponent = int(input("Enter the exponent: "))
-print("The result is: ", power(base, exponent))
+base = float(input("\nEnter the base: "))
+exponent = int(input("\nEnter the exponent: "))
+print("\nThe result is: ", power(base, exponent))
 
 
 

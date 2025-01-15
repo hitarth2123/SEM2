@@ -1,5 +1,5 @@
-a=int(input("Enter first number :"))    
-b=int(input("Enter second number :"))
+a=int(input("\nEnter first number :"))    
+b=int(input("\nEnter second number :"))
 sum=a+b
-print("Sum of two numbers is :",sum)
+print("\nSum of two numbers is :",sum)
 
