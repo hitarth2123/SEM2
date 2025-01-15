@@ -1,5 +1,6 @@
 class  StringEx {
     public static void main(String[] args) {
+        //constrcutor
         String s1 = "Hello ";
         System.out.println(s1);
 
@@ -43,7 +44,29 @@ class  StringEx {
         s41.concat("66");
         System.out.println(s41);
 
-       
+        //Convertign different to string
+        int a= 1234;
+        double b=1234.56;
+        boolean c=false;
+        String str1=Integer.toString(a);
+        String str2=String.valueOf(b);
+        String str3=""+c;
+        System.out.println(str1);
+        System.out.println(str2);
+        System.out.println(str3);
         
+       //length()
+        String sm1="Hello";
+        System.out.println("Length of the String "+sm1.length());
+
+        //isEmpty()
+        System.out.println("STring hello is empty or not "+sm1.isEmpty());
+        System.out.println("String is empty or not "+"".isEmpty());
+
+        //charAt()
+        System.out.println("charAt(index:1)"+sm1.charAt(1));
+
+ 
+
     }
 }
