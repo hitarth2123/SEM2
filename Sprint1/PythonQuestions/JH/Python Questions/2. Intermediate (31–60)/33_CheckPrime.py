@@ -6,8 +6,8 @@ def is_prime(n):
             return False
     return True
 
-number = int(input("Enter a number: "))
+number = int(input("\nEnter a number: "))
 if is_prime(number):
-    print("The number is prime.")
+    print("\nThe number is prime.")
 else:
-    print("The number is not prime.")
+    print("\nThe number is not prime.")
