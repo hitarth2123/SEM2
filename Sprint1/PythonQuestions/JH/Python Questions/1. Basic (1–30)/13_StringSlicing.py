@@ -1,0 +1,8 @@
+s = input("Enter a string: ")
+print("First character:", s[0])
+print("Last character:", s[-1])
+print("First three characters:", s[:3])
+print("Last three characters:", s[-3:])
+print("Characters from index 2 to 5:", s[2:5])
+print("Characters from index 2 to the end:", s[2:])
+print("Characters from the start to index 5:", s[:5])
