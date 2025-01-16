@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class  StringEx {
     public static void main(String[] args) {
         //constrcutor
@@ -96,5 +98,86 @@ class  StringEx {
 
         int index7=sm2.lastIndexOf('i',10);
         System.out.println("lastIndexOf(String:i,fromIndex:10)"+index7);
+
+        //public String substring(int begIndex);
+        String ss1="Substring Example";
+        System.out.println("ss2 : "+ss1.substring(2));
+
+        //public String substring(int begIndex, int endIndex)
+        System.out.println("ss1 1,5 : "+ss1.substring(1,5));
+        System.out.println("ss1 1,1 :"+ss1.substring(1,1));
+
+        String sm3="Hello";
+        //public void getChars(int srcBegin, int srcEnd,char[] dst ,int dstBegin)
+        //Copies characters from this string into the desitnation charcter array.
+        char[]arr=new char[10];
+        Arrays.fill(arr,'.');
+        sm3.getChars(0,3,arr,1);
+        System.out.println(Arrays.toString(arr));
+
+        //public boolean equals(Object anObject);
+        String e1="java";
+        String e2="java";
+        String e3="JAVA";
+        String e4="python";
+        String e5=new String("java");
+        System.out.println(e1.equals(e2));
+        System.out.println(e1.equals(e3));
+        System.out.println(e1.equals(e4));
+        System.out.println("e1 equals e5"+e1.equals(e5));
+
+        //public boolean equalsIgnoreCase(String anotherString)
+        if(e1.equalsIgnoreCase(e3)){
+            System.out.println("both strings are equals");
+        }
+        else{
+            System.out.println("both strings are unequals");
+        }
+        
+        // public int compareTo(String anotherString);
+        String c1="hello";
+        String c2="hello";
+        System.out.println(c1.compareTo(c2));
+
+        String c3="ieklo";
+        System.out.println(c1.compareTo(c3));
+
+        String c4="heklo";
+        System.out.println(c1.compareTo(c4));
+
+        String c5="flagship";
+        System.out.println(c1.compareTo(c5));
+        String c6="Hello";
+        System.out.println(c1.compareTo(c6));
+
+        //public int compareToIgnoreCasting(String str);
+        System.out.println(c1.compareToIgnoreCase(c6));
+
+        //boolean startswith(String prefix)
+        //public boolean startswith(String prefix, int toffset)
+
+
+        String sw1= "hello world";
+        System.out.println(sw1.startsWith("ll"));
+        System.out.println(sw1.startsWith("ll",2));
+        System.out.println(sw1.endsWith("ld"));
+
+        //public booelan contains(charSequence s)
+        String co1="Hello, World";
+        System.out.println(co1.contains("hello"));
+        System.out.println(co1.contains(("ello")));
+
+        //public static String join(CharSequence delimiter ,CharSequence... elements)
+        String msg=String.join("-","Java","is","cool");
+        System.out.println(msg);
+
+        String msg1=String.join("*", "Java",null,"cool");
+        System.out.println(msg1);
+
+        String msg3=String.join("#",null,null,null);
+        System.out.println(msg3);
+
+        
+
     }
 }
