@@ -66,7 +66,35 @@ class  StringEx {
         //charAt()
         System.out.println("charAt(index:1)"+sm1.charAt(1));
 
- 
+        //indexOf()
 
+        //public int indexOf(String str)
+        //public int indexOf(String str,int fromIndex)
+        //public int indexOf(char ch)
+        //public int indexOf(char ch,int fromIndex) 
+        String sm2="this is an index";
+        int index1=sm2.indexOf("is");
+        System.out.println("indexOf(char:e)"+index1);
+
+        int index2=sm2.indexOf('s',4);
+        System.out.println("indexOf(String:is,fromIndex:5)"+index2);
+
+        int index3=sm2.indexOf('s');
+        System.out.println("indexOf(char:i)"+index3);
+
+        int index4=sm2.indexOf(97,5);
+        System.out.println("indexOf(97 s)"+index4);
+        
+        int index5=sm2.indexOf("iss",5);
+        System.out.println("indexOf(String:iss,fromIndex:5)"+index5);
+
+        //public int lastIndexOf(String str)
+        //public int lastIndexOf(String str,int fromIndex)
+
+        int index6=sm2.lastIndexOf('e');
+        System.out.println("lastIndexOf(char:e)"+index6);
+
+        int index7=sm2.lastIndexOf('i',10);
+        System.out.println("lastIndexOf(String:i,fromIndex:10)"+index7);
     }
 }
