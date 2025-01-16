@@ -174,10 +174,52 @@ class  StringEx {
         String msg1=String.join("*", "Java",null,"cool");
         System.out.println(msg1);
 
-        String msg3=String.join("#",null,null,null);
-        System.out.println(msg3);
+        String msg2=String.join("#",null,null,null);
+        System.out.println(msg2);
 
-        
+        //compile time error:jooin ambiguous for String type
+        //String msg2=String.join('#',null);
+        //System.out.println(msg2);
+
+        //public String toLowerCase()
+        System.out.println(msg.toLowerCase());
+
+        System.out.println(msg.toUpperCase());
+
+        //isBlank() Returns truw if the string is empty or contains only while spaces
+        System.out.println("".isEmpty());
+        System.out.println("".length());
+        System.out.println(" ".isEmpty());
+        System.out.println(" ".length());
+        System.out.println("\t\n".isEmpty());
+        System.out.println("\t\n".length());
+        System.out.println(" ".isBlank());
+        System.out.println("\ta\n".isEmpty());
+        System.out.println("\ta\n".isBlank());
+
+        //public String replacer(char oldChar,char newChar)
+        String str="Hello World";
+        String replaced= str.replace("o","a");
+        System.out.println("replace"+replaced);
+
+        String sca="hello";
+        char[] ch1=sca.toCharArray();
+        System.out.println(Arrays.toString(ch1));
+
+        //he solit() method divides the string at the specifed regex and returns an a
+        String text="Java is fun programming language";
+        //split string from space
+        String[] result =text.split(" ");
+
+        //public String trim()
+        //public String strip()
+        //public String stripLeading()
+        //public String strpTrailing()
+        //public boolean isBlank()
+        //static String valueOf(double num)
+        //static String valueOf(long num)
+        //static String valueOf(Object ob)
+        //static String valueOf(char chars[ ])
 
     }
 }
