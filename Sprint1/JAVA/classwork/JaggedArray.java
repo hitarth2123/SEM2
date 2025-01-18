@@ -1,27 +1,30 @@
+import java.util.Scanner;
 
 class JaggedArray {
     public static void main(String[] args) {
-        int two[][]= new int[4][];
-        two[0]=new int[3];
-        two[1]=new int[2];
-        two[2]=new int[1];
-        two[3]=new int[0];
-        int i,j,k=0;
-        for(i=0;i<4;i++)
-        {
-            for(j=0;j<i+1;j++)
-            {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+        int two[][]= new int[rows][];
+        for(int i=0; i<rows; i++) {
+            System.out.println("Enter the number of columns for row " + (i+1) + ": ");
+            int columns = scanner.nextInt();
+            two[i] = new int[columns];
+        }
+        int k=0;
+        for(int i=0; i<rows; i++) {
+            for(int j=0; j<two[i].length; j++) {
                 two[i][j]=k;
                 k++;
             }
         }
-        for(i=0;i<4;i++)
-        {
-            for(j=0;j<i+1;j++)
-            {
+        for(int i=0; i<rows; i++) {
+            for(int j=0; j<two[i].length; j++) {
                 System.out.print(two[i][j]+" ");
             }
             System.out.println();
         }
+        scanner.close();
     }
+
 }
