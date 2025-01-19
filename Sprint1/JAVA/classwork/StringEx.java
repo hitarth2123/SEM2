@@ -108,6 +108,7 @@ class  StringEx {
         System.out.println("ss1 1,1 :"+ss1.substring(1,1));
 
         String sm3="Hello";
+        
         //public void getChars(int srcBegin, int srcEnd,char[] dst ,int dstBegin)
         //Copies characters from this string into the desitnation charcter array.
         char[]arr=new char[10];
