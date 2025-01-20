@@ -1,11 +1,10 @@
 import logging
-logging.basicConfig(level=logging.INFO)
-logging.info('\nThis is an info message')
-logging.error('\nThis is an error message')
-logging.critical('\nThis is a critical message')
-logging.warning('\nThis is a warning message')
 
+logger = logging.getLogger()
 
-
-
+logger.debug('This is a debug message')
+logger.info('This is an info message')
+logger.warning('This is a warning message')
+logger.error('This is an error message')
+logger.critical('This is a critical message')
 
