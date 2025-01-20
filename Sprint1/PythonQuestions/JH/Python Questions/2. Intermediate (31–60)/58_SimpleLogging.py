@@ -1,10 +1,7 @@
 import logging
 
-logger = logging.getLogger()
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 
-logger.debug('This is a debug message')
-logger.info('This is an info message')
-logger.warning('This is a warning message')
-logger.error('This is an error message')
-logger.critical('This is a critical message')
+logging.info('This is an info message')
 
+logging.error('This is an error message')
