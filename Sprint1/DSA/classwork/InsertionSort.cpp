@@ -2,23 +2,18 @@
 using namespace std;
     
         void Insertionsort(int arr[], int size) {
-        for(int i=1;i<size;i++){
-            int key=arr[i];
-            cout<< "\nkey ="<< key;
-            int j=i-1;
-            cout<<"\nj = " << j;
-        
-        while(j>=0 && arr[j]>key){
-            arr[j+1] =arr[j];
-            cout <<"\narr[j+1] = "<< arr[j+1];  // value to compare with
-            j--;
+                 for(int i=1;i<size;i++){
+                        int key=arr[i];
+                        int j=i-1;
+                        while(j>=0 && arr[j]>key){
+                            arr[j+1] =arr[j];
+                            j--;
+                       }
+                        arr[j+1]=key;
+                    }
         }
-        arr[j+1]=key;
-         cout << "\narr[j+1] = "<<arr[j+1]; 
-        }
-        cout << "\narr[j+1] = "<<arr[j+1]; 
-        }
-        }
+    
+    
 
 int main()
 {
