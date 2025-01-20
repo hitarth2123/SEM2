@@ -210,6 +210,9 @@ class  StringEx {
         String text="Java is fun programming language";
         //split string from space
         String[] result =text.split(" ");
+        System.out.println(Arrays.toString(result));
+        String s11=text.replace("[a-zA-Z0-9]", "");
+        System.out.println(s11);
 
         //public String trim()
         //public String strip()
