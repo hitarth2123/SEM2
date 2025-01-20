@@ -1,10 +1,13 @@
-user_input = input("\nPlease enter a string to convert to an integer: ")
-if user_input.isdigit():
-    integer = int(user_input)
-    print(f"\nSuccessfully converted '{user_input}' to integer: {integer}")
-else:
-    print(f"\nFailed to convert '{user_input}' to integer. Please enter a valid integer.")
+def divide_numbers(num1, num2):
+    try:
+        result = num1 / num2
+        return result
+    except ZeroDivisionError:
+        print("Error: Division by zero is not allowed.")
+    except TypeError:
+        print("Error: Invalid input type.")
+    finally:
+        print("Division operation completed.")
 
-
-
-
+print(divide_numbers(10, 2))  
+divide_numbers(10, 0)  

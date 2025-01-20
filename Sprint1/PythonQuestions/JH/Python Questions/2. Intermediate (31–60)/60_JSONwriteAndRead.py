@@ -18,6 +18,9 @@ def update_json_file(file_path, key, new_value):
         json.dump(data, file, indent=4)
         file.truncate()
 
+
+
+
 file_path = 'example.json'
 create_json_file(file_path)
 update_json_file(file_path, 'age', 31)
