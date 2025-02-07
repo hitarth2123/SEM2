@@ -1,18 +1,16 @@
 #include <iostream>
 using namespace std;
 
-const int MAX_SIZE = 10;
-
 int front, rear;
-int arr[MAX_SIZE];
+int *arr;
 int queueSize = 0; 
 
 bool isEmpty() {
     return (queueSize == 0);
 }
 
-void enqueue(int data) {
-    if (queueSize == MAX_SIZE) {
+void enqueue(int data, int maxSize) {
+    if (queueSize == maxSize) {
         cout << "Queue is full. Cannot enqueue " << data << endl;
         return;
     }
@@ -62,15 +60,20 @@ int main() {
     front = rear = -1;
     queueSize = 0;
 
+    int maxSize;
+    cout << "Enter the maximum size of the queue: ";
+    cin >> maxSize;
+    arr = new int[maxSize];
+
     int capacity;
-    cout << "Enter the capacity of the queue (max " << MAX_SIZE << "): ";
+    cout << "Enter the capacity of the queue: ";
     cin >> capacity;
 
     cout << "Enter the elements of the queue: ";
     for (int i = 0; i < capacity; i++) {
         int data;
         cin >> data;
-        enqueue(data);
+        enqueue(data, maxSize);
     }
 
     while (true) {
@@ -87,7 +90,7 @@ int main() {
                 int data;
                 cout << "Enter the data to enqueue: ";
                 cin >> data;
-                enqueue(data);
+                enqueue(data, maxSize);
                 break;
             }
             case 2:
@@ -100,11 +103,13 @@ int main() {
                 displayQueue();
                 break;
             case 5:
+                delete[] arr;
                 return 0;
             default:
                 cout << "Invalid choice. Please choose again." << endl;
         }
     }
 
+    delete[] arr;
     return 0;
 }
