@@ -34,7 +34,7 @@ void insertAfterName(Node* &head, int value, int name) {
     Node* temp = head;
     while (temp->next != nullptr && temp->data != name) {
         temp = temp->next;
-    }
+    }k
     if (temp->data == name) {
         newNode->next = temp->next;
         temp->next = newNode;
@@ -67,6 +67,18 @@ void deleteNode(Node* &head, int value) {
         delete current;
     }
 }
+int searchNode(Node* head, int key) {
+    Node* temp = head;
+    int index = 0;
+    while (temp != nullptr) {
+        if (temp->data == key) {
+            return index;
+        }
+        temp = temp->next;
+        index++;
+    }
+    return -1; // Return -1 if key is not found
+}
 int main() {
     Node* head = nullptr;
     insertAtBeginning(head, 10);
@@ -79,5 +91,12 @@ int main() {
     deleteNode(head, 30);
     cout << "Linked List after deleting 30: ";
     display(head);
+    int searchKey = 40;
+    int index = searchNode(head, searchKey);
+    if (index != -1) {
+        cout << searchKey << " is found in the Linked List at index " << index << "." << endl;
+    } else {
+        cout << searchKey << " is not found in the Linked List." << endl;
+    }
     return 0;
 }
