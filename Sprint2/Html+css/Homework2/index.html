@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            One Page Portfolio
+        </title>
+        <style>
+            body {
+                background-color: #1a1a1a;
+                font-family: 'Times New Roman', Times, serif;
+                line-height: 1.6;
+                color: #e0e0e0;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+            main {
+                flex: 1;
+                margin-bottom: 100px;
+            }
+           
+            h1 {
+                text-align: center;
+                color: #fff;
+                margin-bottom: 30px;
+            }
+            h2 {
+                color: #fff;
+                margin: 30px 0 20px;
+            }
+            p {
+                text-align: center;
+            }
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 20px 0;
+            }
+            li {
+                padding: 10px 20px;
+                margin: 5px 0;
+                background: #2d2d2d;
+                border-radius: 5px;
+                border: 1px solid #444;
+                transition: transform 0.3s ease;
+            }
+            li:hover {
+                transform: translateY(-3px);
+            }
+            ol {
+                color: #ff6b6b;
+                padding: 0;
+                margin: 20px 0;
+            }
+            ol li {
+                padding: 10px 20px;
+                background: #2d2d2d;
+                border-radius: 5px;
+                border: 1px solid #444;
+                margin: 5px 0;
+            }
+            footer {
+                background-color: #1a1a1a;
+                color: #e0e0e0;
+                text-align: center;
+                padding: 20px 0;
+                margin-top: 40px;
+                border-top: 1px solid #444;
+            }
+            .profile-section {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                margin: 40px 0;
+                padding: 20px;
+                background: #2d2d2d;
+                border-radius: 10px;
+                border: 1px solid #444;
+            }
+            .profile-section img {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                box-shadow: 0 4px 8px rgba(255,255,255,0.1);
+                transition: all 0.3s ease;
+            }
+            .profile-section img:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 16px rgba(255,255,255,0.2);
+            }
+            .profile-section p {
+                flex: 1;
+                text-align: left;
+                font-size: 1.1em;
+                line-height: 1.6;
+                color: #e0e0e0;
+            }
+            .gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+                padding: 30px 0;
+                margin: 40px 0;
+            }
+            .gallery img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 10px;
+                transition: transform 0.3s ease;
+            }
+            .gallery img:hover {
+                transform: scale(1.05);
+            }
+            .gallery-item {
+                position: relative;
+                overflow: hidden;
+                border-radius: 10px;
+                border: 1px solid #444;
+            }
+            .gallery-item::before {
+                content: attr(data-title);
+                position: absolute;
+                bottom: 10px;
+                left: 10px;
+                color: white;
+                background: rgba(0,0,0,0.7);
+                padding: 5px 10px;
+                border-radius: 5px;
+                font-size: 0.9em;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            .gallery-item:hover::before {
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+            <h1>Hitarth Patel</h1>
+            <p>Welcome to my personal introduction page!</p>
+
+        <h2>Profile</h2>
+        <div class="profile-section">
+            <img src="https://t3.ftcdn.net/jpg/05/84/21/24/360_F_584212436_QpouZuTfztsdVz2zVVmmSMSuTPwXl056.jpg" alt="Profile Picture">
+            <p>Aspiring software developer with a passion for creating beautiful and functional web applications. Currently pursuing a degree in Computer Science and constantly learning new technologies to enhance my skills.</p>
+        </div>
+
+        <h2>Interests</h2>
+        <ul>
+            <li>Web Development</li>
+            <li>Graphic Design</li>
+            <li>Photography</li>
+            <li>Reading Tech Blogs</li>
+            <li>Playing Chess</li>
+        </ul>
+
+        <h2>My Favorite Foods</h2>
+        <ol>
+            <li>Pizza</li>
+            <li>Sushi</li>
+            <li>Biryani</li>
+            <li>Ice Cream</li>
+            <li>Coffee</li>
+        </ol>
+
+        <h2>Fun Facts</h2>
+        <ul class="fun-facts">
+            <li>Built my first website at age 14 using HTML and CSS</li>
+            <li>Can type 85 words per minute</li>
+            <li>Have a collection of 50+ tech gadgets and devices</li>
+        </ul>
+
+        <h2>Quote</h2>
+        <blockquote style="border: 1px solid #ccc; padding: 10px; font-style: italic;">
+            "The best way to predict the future is to invent it." - Alan Kay
+        </blockquote>
+
+        <h2>Media</h2>
+        <div class="media-section">
+    
+            <iframe width="100%" height="715" src="https://www.youtube.com/embed/X8V4qFFHvHQ?si=HM1O8uOsT4DEKLo9" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            <h3>Audio</h3>
+            <audio controls width="60%">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <h2>Image Gallery</h2>
+        <div class="gallery">
+            <div class="gallery-item" data-title="Modern Coding Workspace">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Modern Coding Workspace">
+            </div>
+            <div class="gallery-item" data-title="Creative Design Workspace">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Creative Design Workspace">
+            </div>
+            <div class="gallery-item" data-title="Tech Gadgets Collection">
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Tech Gadgets Collection">
+            </div>
+            <div class="gallery-item" data-title="Design Inspiration">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Design Inspiration">
+            </div>
+        </div>
+
+        <h2>Contact Information</h2>
+        <p>Email: <a href="mailto:2024.hitarthp@isu.ac.in">2024.hitarthp@isu.ac.in</a></p>
+        <p>Phone: (+91) 95294 59435</p>
+
+        <h2>My Social Media Links</h2>
+        <div class="social-links">
+            <a href="https://github.com/hitarth2123" target="_blank">GitHub</a>
+            <a href="https://instagram.com/shad0w_2115" target="_blank">Instagram</a>
+        </div>
+        <footer>
+            <p> 2025 Hitarth Patel</p>
+        </footer>
+    </body>
+</html>
