@@ -1,5 +1,6 @@
 Output of the LabSession
 Image(https://github.com/hitarth2123/SEM2/blob/main/Sprint2/LabSession/150096724046_Hitarth_Patel_21_APRIL_2025_HTML_AND_CSS/LABSESSION1.png)
+![Screenshot 2025-04-21 at 4 18 28 PM](https://github.com/user-attachments/assets/94b18515-eb0d-4d3c-8183-06741b138989)
 
 
 1. Difference between padding and margin in CSS?
