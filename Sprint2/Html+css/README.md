@@ -1,5 +1,7 @@
 Problem Statements
 
+
+HTML:-
 2- image(https://github.com/hitarth2123/SEM2/blob/main/Sprint2/Html%2Bcss/PS2.png)
 ![PS2](https://github.com/user-attachments/assets/4987efb4-c922-4070-8fe4-4c7fd12fa8ef)
 
@@ -24,3 +26,4 @@ Problem Statements
 ![PS7](https://github.com/user-attachments/assets/01ed2a52-06a0-4f2d-b49c-df6de021db24)
 
 
+CSS:-
