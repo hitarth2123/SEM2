@@ -1,6 +1,6 @@
 Problem Statements
 
-2- iamge(https://github.com/hitarth2123/SEM2/blob/main/Sprint2/Html%2Bcss/PS2.png)
+2- image(https://github.com/hitarth2123/SEM2/blob/main/Sprint2/Html%2Bcss/PS2.png)
 
 3- image(https://github.com/hitarth2123/SEM2/blob/main/Sprint2/Html%2Bcss/PS3.png)
 
