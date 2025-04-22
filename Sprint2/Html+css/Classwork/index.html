@@ -2,35 +2,177 @@
 <html lang ="en">
     <head>
         <title>
-            har har shambu
+            har har shambhu
         </title>
         <style>
-            body{
-                background-size: cover;
-                background-image: url("https://wallpapercave.com/wp/wp2609060.jpg");
+            body {
+                background-size: contain;
+                background-image: url("https://i.pinimg.com/474x/fc/38/c3/fc38c3bd589d03687cb586c92411c3b6.jpg");
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                color: #ffffff;
+                margin: 0;
+                padding: 20px;
+                position: relative;
             }
-            header{
+
+            .header-class {
+                text-decoration: none;
+                color: #ffffff;
+                position: relative;
+                z-index: 2;
+            }
+
+            .header-class:hover {
+                color: #87CEEB;
+            }
+
+            .nav-menu {
+                background-color: rgba(0, 0, 0, 0.8);
+                padding: 1rem;
+                margin-bottom: 2rem;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                position: relative;
+                z-index: 2;
+            }
+
+            .nav-menu ul {
+                list-style: disc;
+                padding-left: 1.5rem;
+                margin: 0;
+                color: white;
+            }
+
+            .nav-menu li {
+                margin: 0.5rem 0;
+            }
+
+            .nav-menu a {
+                color:white;
+                text-decoration: none;
+                padding: 0.5rem;
+                display: block;
+                transition: color 0.2s ease;
+                position: relative;
+                z-index: 2;
+            }
+
+            .nav-menu a:hover {
+                color:white;
+                text-decoration: underline;
+            }
+
+            h1 {
+                color: #ffffff;
                 text-align: center;
-                font-family: 'Times New Roman', Times, serif;
+                margin-top: 30px;
+                font-size: 28px;
+                position: relative;
+                z-index: 2;
+            }
+
+            h3 {
+                color: #ffffff;
+                margin-top: 20px;
+                font-size: 1.5rem;
+                position: relative;
+                z-index: 2;
+            }
+
+            p {
+                color: #ffffff;
+                margin-bottom: 1rem;
+                position: relative;
+                z-index: 2;
+            }
+
+            ul, ol {
+                list-style: disc;
+                color: #ffffff;
+                margin-left: 20px;
+                margin-bottom: 20px;
+                padding-left: 1.5rem;
+            }
+
+            li {
+                margin-bottom: 10px;
+            }
+
+            a {
+                color: #87CEEB;
+                text-decoration: none;
+                transition: color 0.3s ease;
+                position: relative;
+                z-index: 2;
+            }
+
+            a:hover {
+                color: #ADD8E6;
+            }
+
+            header {
+                text-align: center;
+                position: relative;
+                z-index: 2;
+            }
+
+            header h1 {
+                font-size: 36px;
+                margin: 0;
+                text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+            }
+
+            .image-container {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+                padding: 20px 0;
+                position: relative;
+                z-index: 2;
+            }
+
+            .image-item {
+                flex: 1 1 300px;
+                max-width: 300px;
+                margin: 0 10px;
+            }
+
+            .main-image {
+                width: 400px;
+                height: 350px;
+                display: block;
+                margin: 20px auto;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+            }
+
+            .side-image {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+            }
+
+            img:hover {
+                transform: scale(1.05);
             }
             img{
-                width: 220px;
-                height: 180px;
-                display: flex;
-                margin: auto;
+                width: 1420px;
+                height: 320px;
+                padding: 10px;
             }
-            h1{
-                text-align: center;
-                font-family: 'Times New Roman', Times, serif;
-                color:darkblue;
-            }
-            .content{
-                color:darkorange;
-                font-size:32px;
 
-            }
-            p{
-                color:darkturquoise;
+            .content {
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px 0;
+                position: relative;
+                z-index: 2;
             }
            
         </style>
@@ -43,35 +185,26 @@
          
         </header>
         <img  src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8PEBAPEBAPDw8VEBAPDw8QEBAQEBAQFRYXFhYVFRUYHSggGBolGxUVIT0hJSkrLi4uFx8zODMtNyotLy0BCgoKDg0OGxAQGy0lHyUtLS0tLS0tLS0tLS0rLS0tLS0tLy0tLS0tLS0tLS0tLS0rLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAAAQIGAwQHBQj/xABIEAABAwIDBQQIAwQHBgcAAAABAAIDBBEFEiEGEzFBUSJhcXIHFDJCgZGhsiNSsWLB0fAVJDOCksLSQ1NzlOHxFzRUY4Oio//EABgBAQEBAQEAAAAAAAAAAAAAAAABAgME/8QAIhEBAQEBAAIDAAEFAAAAAAAAAAECESExAxJBMhMiUXGR/9oADAMBAAIRAxEAPwDo6EIXieljl4s8x+1ykoy8WeY/a5SUAkmkgCkUykUCSTSQCEIQCSaSISEIQJCEIEUkygoEEFNIqLAhCEUkIKEGOL3vM5TUYve85UlIBCEKjdQhC0jHLxZ5j9rlJRl4s8x+1ykoBJCEAkU0igSSChAIQhAJFJzwOJtzPgtaWtYGZw9pbr2g4FunHUKo2ULmsO31ZXVDoMMghLWAudNVbzKWg2vZhBbckW4nuCt+G7QxujkdUZKaWFwZUse8ZGOIBaWuPtNcCCD8OIVubElj2kLQo8app8whnilc32mse0ubfhdvEJYVisdVvDFd0bJDFvfde8e1k6gXAvwJv0U5Vb6RTSUDSKEFRYEIQihJNJBji97zuU1CL3vM5TUihCEKo3UIQtIxS8WeY/a5TUJeLPMftcpqBIQgoBRTSQJCEIBRc6wKx1U2RpK41i224kxQCZ0vqEZdCWRySs7XAykMILrO5a6DQXW85umbePV9Ju0ToZ6SPtOha81EsYOUTGMjIx1/dvxFj9FXKjbSKoc8bo0JkDo3TQEOa5jhl/GisA+1/aBzDl0Xr7b7MMqIm1FLKHNALm5pnSRvYbey95OU6dbLl7hY2+C74k456t6616Ptp6KKB8EzqeCSK0bHXAErANXbwgXu/MbdCFS9tMd31c6WnlcA0Ma2SNzm3c0O7QI87hfx6rHsphVNJaasc4QmeOmjY02L5X63ceTGjU26hWfa30dFvbo22sO1CXGzu9rjwPcdP3v7Zo82N2miqKnCjUzVG8mbFLJTztY6OaPKHZmGQ6vabFp068dCrV6KXNOFU+XkZg7zbxxP6hUDZ3GKWkpZaXERKZo5HtZTFr3DdOAdYN9jVznm5N9ell7GDbQ0+ESNyEvwuq/FjLbudTzCzXix1I9nTiLdxvjUtliyuqlJaWHYtTVLQ+CaOVp/I4EjxHEfFbq4WOkCEyko1AhCEAkhCDHF73mcpqEfPzOU1IoQhCqN1JMpLSIScWeY/a5SKjJxZ5j9rlJQJCEIEUkFJAIQoyHQoKlt7tLHRQ3ddznHIxjbXJtf4AL59c4kknUk3J71ffS9UudUQsN8gY9wPIuJsfkAPmqAvV8c5HHd8soqZMhjzv3ZOYx5jkLuuXhfvWJb2DYTNWSiGFuZ5BJJ0a1o4uceQ4Kx1ewErGnLUwSSj/ZA5ST0Bvx8QFu6kZ5a1NnNnqivjbFE8MtKZRnIDSw5WPe2wuS0hlx+03qu14htFh8R3U1VAyQWBa6RuYHvHL4rj2weJS0slWw3FqeZ5Y73ZY7fI2zBebgGzdTiJfI0tDA78SaQmxedT3k63+K56z9r59NZvPS6bd7OMrG+t0jmSuDbfhuD2ysHIEe8P+nRVnZmjjkp/wAd7d36/SxiOR2RgDg4SOvcWOQn/AtwYJX4VepglZNE3WZjCbFvPM3mO8ajivNr8PFVXRthuI6kMqGtHK4JfpwuC16ufXOldHh9F1EHh95wB7jZbNPxtm+qu2GUEVPGIom5WDvc4k9S5xJJ8SsWz1RvaSlk/NTwu+bAV6AXn1q326SQ0kIWGoEIQikhCEGOPn5nKahHz8zlNSKEIQqjcQhC0iEnFnmP2uUiov4s8x+1ykgSEIUCKiUykUAoTHslTXi7U4sKSnllIvkY51uFyBoPmrErjXpUqC6taz3WxAjxc43/AEHyVLW9i+KTVchlmcHPOgsAA1tyQ0dwutFeyTk44W9r18Gxw0kcrWRtc+QszOc52XI2/ZLW2JBJvxsbC4Kw/wBMSgODGwxtd7QZBFr8SCfqvOTbx69yvEWnZ7D6yZ1ROYpXiSlqGiQsIEj3N0seBJVk9H+yO9Y8TiSOWOS76WeKN8T43DsvDHi4vZwzA+6tej2kgjmkqJnvhnfEIjSb6V0LLADN2Izu3aCzdba346XD0U1ML6eQMmMr94XObJK6WWJrgLNOZjbC4JuBY+K5bt5W8yNPGdkXQHfUEUYcBZ9MeyyZmtxmBGpBPtXHDhZU6ooZMKraJ+fM31iRsbSey2ncWXb4/iya9wK7pI0WK5b6SKZhkjdJEJrNk3cedzB+aRxLdRYMY0cryC6xjdt5WtRc9kH7qI0L9JYC9rQQRnpi87p7TzGWzT0IIVgVF2LxEyTNfUFzZBD6iN5YO3rX7yziNM743ROt1a/or0ue5ytZ9AIQhYagQhCKSE0kGOPn5nKajHz8zlJSAQhCo3EIQVpEJOLPMftcpKD+LPMftcpoEhNJQRKRTKRQCqHpFhL6Sob/AO08jxAv+5W8lc19K+0TYYTTt1lla5o/ZZwc4/O3/ZbxO1nV8OLITXt1FPbd0VhfK2Zzy0BwmkizBt/yWLB43PcvW4PDVk2bwBk8RqXVTKcRylkmawcG5WkOab6E3I+C8OopHxtY8i7HtDmPGrT1F+oNwQsClF3wPaWjgzQnDo5HZy2N0WSV728AC5wu494434BW+n2bmeWV1HF/RdYL5WPsY5YzxEzGCzb+F9BcXtbW9FeD00Efrc0sBllY0x3ewPiF3XGp0v2Tf4ePS454ney9rvBwP6LhvXL4dczx5QoWyiFgmc182UbxzGlrC7nlHIKh7b4Q+oqKazuz+NDK1p7YZKzR4HQGM/EBW/G8Zip43OLgX5SIowQXySW7LGt5klcy2l2ptUgtcSCGUxfFlJEsTg5zhfRw/GcO4sBUxL3q6s483GMWfTx4iw3DqmeMQkcxES2SQcwLsAB7xZdnwSYyUtNI4kudTwvcTxLnMaSfquG7TUZdRsmfYzw1MtHNIABnDXOsT8h813DZ+3qlLlN2+rwWPUbttlfk9Jn23whAQuDrAhCECQhCCEfPzOUlGPn5nKSkAhCFRuIKELSMb+LfMftcpqD+LfMftcpohITSKKRUSpFJQa9ZMGNJJtovnXbzF2VdY58ZzRtaImu5OsSSR3XJ+S7D6SJntoqjJe+6dw/L730uuAwRZzbM1ml7vJA+i7/FP1y3fxiXquxx5YAY4jKI9yKjK7fbu2W172vl7Oa17KEeE5vZqKVzuTd45hJ6DO0D6rRnhdG5zHtLXtNnNPEFdnNlpK+WK4je5oPFvFp8WnQrKcUkPFsBPU08F/tWisj4XtaHFrg13suLSGu8DzVGz/SUn5YP+Wpv9CBicn5af/lab/Qup4V6KYGxtM7pJJC0FwByMB6C2v1WufRtTitpmgv3TjK+WJxvdkYHA8dXOaD4rn/Uy19apOBwVta4xw2jjOkssUUcLGt55nMAvp7t9VjOKilmlY2GCRkc7zAJWl26e0huYWIvfK0kHS4C7niMUNLC1jGNjZmZG1rAAAXENGniQvnjEx+PNfjvZPuKY19jU4tUjnPwV8jzmc+rdI5x4klwBPzJV/8ARFjvrNGad5/EpyIx3wm+Q/Cxb/dCrOE4YajAcjRd34zmgc3NkLgPosvogo5KeqJdYx1FEZo3NN75JGAgjkQXELOuXNanuOuIQheauoQhJFCEIQQj5+Zykox8/MVIqQCEIVG4goQtIg/i3zH7XKSi/i3zH7XKSISE0kCKipKJUV4e1kZNNUOb7TYZXAgZiLNJ0B4nuVE2q2JpIafeQwx9gaZnvGcOGUXcLkm7mu+FuauG1u1lLQNBlOZzgckTRme/rpwA7yqngGNtxGg3NskkM9LG6O5d/V/WI8mp1PYGW/VveuuOydYvEdntiqX1V7poYnyZ5IXOaZHC8TjE5zS6xF3tcdAFzDGXDeubxLLwlx4v3ZLWn/CGj4LtmNYo2iwuN7rZxAw2/NO8XPze4n5rhDWvkfYXe9ztANS5xP8AFdcW3tY1yLn6L9lY6+Z8k1nQw5CYv94918od+yMp056Lq2PbMx1MLocrfdLOQa5pBFunTwK536Eq8R1dRTu03kQcPPEeHyc75LtBIXP5LZprEnCstYUo3gl94McweDi0n7AtiORrgHNIc0gFrgbgg8wVJcm1P9IbnNo5Xt9qMxTD/wCORj/8q4jtJGG1Uxb7Ln71p6tkAePuX0HtLRCaGSM+y9j43eDhY/quAYpA/IA8HewONLMOjQSY3eHtN+Deq7/DXPbqforB9UnpX23kE54a9iRoc0juNnLJAxuHVcb3gimYakZgCRFDUlr8xt7rJWOaegewleDsRiYgdS1d/wAGVjcOrukczLCCV3i2wv3q6bVY06iG+9XM8IBEhjIEkR62PFh+Frc76Z1/L/az0s0EzJGh7HNexwu1zSHNcOoI0KyLi8PpDhhqGTU0EkLHP/rMWZu6mYeLsg0bKOOYceBuu0NcCARzAK57zctZvQhCFhsJJpIIR8/M79VJRj5+Y/qpqQJCE1RtoQR/OqLfzqtIg/i3xP2uUlF3Fviev5SpW/nVECRKCFqYhVMijc97msaBcuc7K0eJKCv7ZbZw4bGC4byV1xHEDYuI4knk0aarmlV6WsQcTkjpo28hkkc4DvJdr8lpbaR1FfVvliY51O1rWRzOIZE5trlwe4gEXJ4dFX/6Mjb/AGlVA3ujzzO/+oy/VejOM88uWtXpY7jU1dKJpsucMDBlFhlBJ6/tFex6NZw3EI2m9nskZxsLgZxfrqwfReQBQt/9VMe7dwNP3lbEWOshLXU1LFC9r2vErnySygtINgSQADwOnAlbs8cjP6sGNVzqqspYqx4ioYzCx1zZufcse7NbW/aDb8gfFe1juy9Nh0NRWQB7nmM7kDtMiz6ZmadCTc8Aue43jUtY8PkbG2wIDY2lrdbXOpJJ0HyC6b6OMcZPQSQTm7qfQWFz6ueByjiG63PRY12TrUstcuwTE30dRDUx+3G8PA5OHBzT3EEj4r6LpcYiqaeKphdmjeAR1B5tPQg6WXJNocNoN7u6geqSOOaKphGamna7XNbkALDiNSvPoauswpxFNIyrgewTPawOfGGXsHuA1jdYcfneybn2Jfq6T6LMa38VTTPPbgnky3vfdSOcR8nBw+SsWJ4wIZaSMWvNUbkg8cu7kdcf3ms+a4fsdtSKGulqHsdu5RIyRjDctzODgQDa9iAPAlbGL7bSVFfT1MUZLIX3ghde73HiTbmdBYdFm/HbpZrw71PGHCxXMdvtn44xJWNsHZRHNHbs1DCQ0N7n3tZ2vAL1sJ2oxOZu9mpqWjh4mSolkactr3Df42WOp2hjrZrUjRMYtTVykikgeQO2B77speLacOIuSsZllatlit4Ts3NRtdYsnEjAysw+UhhcHXLGseDl3gbc3vy716lHtlTwsENQ6SVjHGLenL6xC0aZaiO93OB7OdtwfFa2I4/F6vNPAc8MEg3Uj+NVVuFnSOvYhrcw0bxtpYABULZvAp8RqBHGCRmDppTezGk6knqdbDmusnf5Md56daj2Swmtbvo2QTNdrnhcWa9+Qix7ituqmrKA71kj6qkbYz08uV00UQ9p8MgALrDXK69wNDdeRWejenF3U7p6Z/5opXH5g62+KqeKbE4ownJO6oH/ABXscfg42+qxOX9/61ez8dvhla9rXsIcxzQ5rhqHNIuCPgpqg7C4lU0VKKevp52CM2ilYx07d2dQ126zEWN9bWtborlh+K01TfcTRy20cGPBc09HN4tPiuWs8rpNdbiEfzzS/nmsqizn5j+qkkzn4nr1T/nmpFCEfzzQqjcKSkVFaRB/FviftKHvAGqH8W+J+1y1cSo98x0eZ7A4ZS6N2V4B42dyNuY1SIqm0m2zInGGBzc9y0vyulOYcWxxN1ld8Q0czcWXgR0WJ1hD2Q7nW4q8QcJqgaWzRQAZIT3ADxV8wbZikoxaCCOLSxcBd7h+089o/ErYxWV8UZMUTpX8GsaWtuT1cdAO/wDXgun2k9M8/wAuXY9svSUrDU4lVVFU/gAXZc7j7rGA3+tlz3EKxszskFOyGO9mMY3PI7pmebknw0XU63Y4zvdWYtUhwALt1G4x08LOmc6279Lqp4rjzHF1LhFMWt4OnijO9eP2bC4H7R18F1zWLFKnhew5XtLHc2uFiPELGrlhno5xGo7UjWwAm5MjszzfW+Vt/qQvfpvREf8AaVLj5Ig36lxWrvM/Uma5cvW2axt9DO2ZvabYsljPsyRkWII59fELo3/hHD/v5v8A8/4LBP6JW+7PIPM1rv0ss/1M0+tFZh8FZTfhO3tESXQvGUy0Eh0DZG3uIujQNAOmoqTqSuwo7+F7XQOynfR2fFIy/ZzdL/v4q1YfsNiVA/e0dUzNzZI17GPGo7QGYHiVsV9Ix3/nKeWgvI2R74vxcPle0jLvQ24aDe5JDeGpUli8VA7Yh+s9DRzvsO2WWJ43J49R9eq06raS5idBTU9K+N4ka+NozEhuWxuNR3eCvs+ydJUXkFOyW5J3tFUMDXHOATkcQBz4E8Hc7LHDsTSs7XqFVKez2ZZ4GN1JB4SctD8rK/bJyqZh8FTispNRU5Y2NMskkrrNbGD2sjeGlz4KxVlNJVRCCAihwmPR00vZ3/aN3i57TbgHW3HXoNnGI44t2/EDRxwRZzBh9OC/NIWaBzso0vfkBe11SMYxqqxGUB2dwLrQ07LlregDRxdbnxV9p6ehtHi1OWw0NMXCjiN5JGgF8zr6usbA8z337gvfwHaqqyCmwnD2hjTYvkJfc/me4ZQHHvK29kfRhcNlrr8iKdp4f8Rw/QfNdQosOihYGRsYxg0DWtDWjwAXPW8zx7amaqNHh+OTWM9bFTi9yyngZI63TM8afVe1S4C8f2lXWSnvfGwfJjAveATXK6rfGBlKAAASbcybk+JXn4ngUE9nSRtc8exKLsmZ5ZG2c34FewkVjta4r1NHW0ztJDWQc4pcjalnkk0bJ4Psf2l70Mgc0OAcL8nNLXDxB4KWUJq29OcQZz8xU1FnPzH9VJZikmhCo3FFNBWmWN/FviftcpKL+LfE/a5SRQk5t00IjxcX2fiqy3fh0kbTcQlxERdyc5o9o9xuO5bVFhMMLQ2ONjGjg1jQ1o+AW+hLb6OMbWAck1IpKKSLIQgiWA8lrz0gIK2kKjle1Xo+zvdNSH1eUm5a27Ynkag6ewbgHTTTgqZUbM40HWLZ32JyubOCNTe4u6411X0K5gKxmnb0C6T5bGLiOCYT6OcQqHfiNbTsvq+Rwe74NaTf4kLq+ymxdLh4uxueYizpn2Lz3D8o7h8bqzNjA4BSspr5LSZkRDUWUkrLm0VklKyWVAihOyLKKSE7JEIqLOfmKkosHHzFSUgEIQqNpCElpEX8W+J+1ykoP4t8x+1ykoBCEFAIQo3QMpIJSQCEIQCEJgIEiykhDiOVACd0rqKRCSZKSHAhCEAkmhAkIQggzn5imlHz8xU7KQRQpWQqM6Swmqj7Pbb2vZNxY8lMSDXUaHKfHTT6hOxDfxb4n7SpErG86t8f8pUiqGSkSkhAXQhFkAiyaLp04Vk7IuldReJJXSQgd0roQgRQmkgEk0IEhCEAhCT+GnHiPgopoSvwtwUGyXJtwBIJtzvwHVOgj5+YqawB1r8zmIaOpPXusFlA6m5+XyUlDQhCvRQqXEt76uSSGsjiLvG97jro53+FWKSuIyt98EvkA1O+fc5B1y5voFzvDZKzO3+q1UYBDu1TSt/E9kWuLAA3NzoCVfcJwVxAdI/IebI3XeL9Xcjx1Fz3ry6+P5J/bHGenoTVj3PZTxG8otv5eLYhbUdC8i9hy4nofWWtBTMiDGRtDW5joOuV2p6lbK9OZZ7dAEXQShaUIQhAIQhA0kIQCEIQCEIQCEIQJCaSASTSKCL+HMjnbj8FruqQNDoRwc4FrHfE6A9y2kLNixpiosLN7Vz2B48QeltT4LM85Wj4N77nQfM/qlJTMOoDWuGrXBoBB/h3LFTvc9xzgNczQMBuNR7fffUd1iseZ4aSFmuJtdxuxoHEjifAaj5LO2/O1+7l/FY4IwC92pJcePIDkO7n8VlK1lKEkIVEKnh/j+9YaD2pPEfvTQu2/blG073fN/lcpoQubRIQhFAQmhAkBNCAQhCAQhCAQhCAQhCASQhAJFCEDKxv4t+P6IQpVHMeB/ctab+3i8kv+VNCxpcszvZf/e/QLIkhIBCELSP/2Q==" alt="Mahadev">
-       <div class ="content">
-        <ol>
-            <a href="#Main-Information">
-                <li>Main Information</li>
-            </a>
-            <a href="#Description">
-                <li>Description</li>
-            </a>
-            <a>
-                <li>Origins</li>
-            </a>
-            <a>
-                <li>Temperament</li>
-            </a>
-            <a>
-                <li>Health</li>
-            </a>
-            <a> 
-                <li>Apperance around the world</li>
-            </a>
-        </ol>
-       </div>
+      <div class="content">
+        <h1>Content</h1>
+        <nav>
+          <ul>
+            <li><a href="#Main-Information">Main Information</a></li>
+            <li><a href="#Description">Description</a></li>
+            <li><a href="#Origins">Origins</a></li>
+            <li><a href="#Temperament">Temperament</a></li>
+            <li><a href="#Health">Health</a></li>
+            <li><a href="#Apperance-around-the-world">Appearance around the world</a></li>
+          </ul>
+        </nav>
+      </div>
        <div id="Main-Information">
         <h1>Main Information</h1>
             <p>Shiva is often depicted with several distinctive attributes, including the trident (trishul), which represents his three primary aspects: creation, preservation, and destruction. He's also associated with the snake (naga), which symbolizes his control over death and rebirth. Additionally, Shiva's third eye is said to have the power to destroy evil and ignorance.<br><br>
                 In Hindu mythology, Shiva's consort is Parvati, and together they have two sons, Ganesha and Kartikeya. Shiva's relationship with Parvati is often depicted as a symbol of divine love and union. Shiva's followers, known as Shaivites, worship him in various forms, including the linga, and seek to attain spiritual growth and self-realization through devotion and meditation.<br>
                 <br>Lord Shiva is a major deity in Hinduism, often revered as the destroyer of evil and the transformer of the universe.<br> He's also associated with meditation, yoga, and spiritual growth.
                 Some interesting aspects of Shiva include:
-                <ul style="list-style-image: url('https://img.icons8.com/?size=32&id=vQyIUfHKSXF0&format=png'); color:darkturquoise;">
+                <ul>
                     <li>The Trimurti: Shiva is part of the Trimurti, along with Brahma (the creator) and Vishnu (the preserver).</li>
                     <li>Destroyer role: Shiva's destructive power is often seen as a transformative force, paving the way for renewal and rebirth.</li>
                     <li>Yoga and meditation: Shiva is often depicted in meditation, symbolizing his connection to spiritual practices.</li>
@@ -80,38 +213,95 @@
             </p>
        </div>
       <div id="Description">
-        <h1>Descripiton</h1>
-        <p>
-         Mahadev, another name for Lord Shiva, means "Great God" in Sanskrit. He's revered in Hinduism as:<br>
-         <ul style="list-style-type: circle; color:darkturquoise;">
-             <li>Destroyer of evil</li>
-             <li>Transformer of the universe</li>
-             <li>Lord of meditation and yoga</li>
-             <li>Symbol of spiritual growth and self-realization</li>
-         </ul>
-        <p>     Mahadev is often depicted with attributes like the trident, snake, and third eye, representing his powerful and mystical nature.<br><br>
-        Aspects of Mahadev (Lord Shiva):</p>
-          <ul style="list-style-type: circle; color:darkturquoise;">
+        <h1>Description</h1>
+        <p>Mahadev, another name for Lord Shiva, means "Great God" in Sanskrit. He's revered in Hinduism as:</p>
+        <ul>
+            <li>Destroyer of evil</li>
+            <li>Transformer of the universe</li>
+            <li>Lord of meditation and yoga</li>
+            <li>Symbol of spiritual growth and self-realization</li>
+        </ul>
+        <p>Mahadev is often depicted with attributes like the trident, snake, and third eye, representing his powerful and mystical nature.</p>
+        <h3>Aspects of Mahadev (Lord Shiva):</h3>
+        <ul>
             <li>Cosmic dancer: Shiva's cosmic dance, known as the Tandava, represents the cycle of creation and destruction.</li>
             <li>Yogi and ascetic: Shiva is often depicted as a yogi, emphasizing his connection to spiritual practices and self-discipline.</li>
             <li>Destroyer of ego: Shiva's destructive power is also seen as a means to destroy ego and ignorance.</li>
             <li>Benefactor: Despite his destructive role, Shiva is often revered as a benefactor, granting wisdom, strength, and liberation to his devotees.</li>
-            <li> Mystical and mysterious: Shiva's nature is often shrouded in mystery, making him a fascinating and complex deity.</li>
-          </ul>
-            <br>
-            <p> Some popular symbols associated with Mahadev include:</p>
-           
-            <ul style="list-style-type: circle; color:darkturquoise;">
-                <li> Linga: A symbol of Shiva's creative and destructive powers.</li>
-                <li>Trishul: A trident representing Shiva's three primary aspects.</li>
-                <li>Third eye: Representing intuition, insight, and spiritual awareness.</li>
-                <li> Nandi: Shiva's vehicle, a bull representing strength and loyalty.</li>
-            </ul>
-        </p>
+            <li>Mystical and mysterious: Shiva's nature is often shrouded in mystery, making him a fascinating and complex deity.</li>
+        </ul>
+        <h3>Symbols associated with Mahadev:</h3>
+        <ul>
+            <li>Linga: A symbol of Shiva's creative and destructive powers.</li>
+            <li>Trishul: A trident representing Shiva's three primary aspects.</li>
+            <li>Third eye: Representing intuition, insight, and spiritual awareness.</li>
+            <li>Nandi: Shiva's vehicle, a bull representing strength and loyalty.</li>
+        </ul>
       </div>
-
+      <div id="Origins">
+        <h1>Origin</h1>
+        <p>The origins of Mahadev (Lord Shiva) are rooted in ancient Hindu mythology and Vedic texts. Here's a brief overview:</p>
+            <ul>
+                <li>Vedic period: Shiva's earliest mentions can be found in the Rigveda, where he's associated with the god Rudra, a fierce storm god.</li>
+                <li>Evolution of Shiva: Over time, Rudra's characteristics merged with those of other gods, evolving into the complex deity known as Shiva.</li>
+                <li>Puranic period: The Puranas, ancient Hindu texts, elaborate on Shiva's mythology, describing him as a powerful, benevolent deity with multiple aspects.</li>
+                <li>Shaivism: The Shaivite tradition, which worships Shiva as the supreme deity, developed over centuries, influencing Hindu philosophy, art, and culture.</li>
+                <li>Indus Valley Civilization: Some scholars believe that Shiva's roots may lie in the Indus Valley Civilization, where seals featuring a figure resembling Shiva have been discovered.</li>  
+                <li>Vedic Rudra: Rudra, Shiva's Vedic precursor, was associated with storms, hunting, and medicine. Over time, Rudra's characteristics were incorporated into Shiva's mythology.</li>
+                <li>Non-Vedic influences: Shiva's mythology may have been influenced by non-Vedic traditions, such as the ancient Tamil civilization's worship of the god Siva.</li>
+                <li>Syncretism: Shiva's mythology reflects syncretism, blending elements from various ancient traditions, including Vedic, non-Vedic, and tribal influences.</li>
+            </ul>
+           <p> The evolution of Shiva's mythology is complex, reflecting the dynamic cultural and spiritual landscape of ancient India. <br>Shiva's origins are complex, with influences from various ancient cultures and traditions. His mythology continues to captivate and inspire devotees and scholars alike.</p>
+      </div>
+      <div id="Temperament">
+        <h1>Temperament</h1>
+        <p>Lord Shiva's temperament is a complex and multifaceted entity, comprising various contrasting traits that make him one of the most intriguing deities in Hinduism. On one hand, he is often depicted as a fierce and intense god, embodying the powers of destruction and transformation. This aspect of his temperament is reflected in his association with the tandava, the cosmic dance of destruction, which showcases his ability to break down and renew.<br><br>
+            Despite his fierce exterior, Shiva is also revered for his serene and benevolent nature. He is often depicted in meditative and yogic states, showcasing his ability to remain calm and composed even in the midst of chaos. This aspect of his temperament highlights his capacity for compassion and nurturing, and serves as a reminder of the importance of balance and harmony in life.<br><br>
+            Shiva's temperament is also marked by unpredictability, as seen in his sudden outbursts of anger or joy. This unpredictability underscores his independence and refusal to be bound by conventions, and serves as a reminder of the importance of living life on one's own terms. At the same time, Shiva's unpredictability also makes him a formidable force to be reckoned with, and inspires a sense of awe and reverence in those who seek to understand him.<br><br>
+            One of the most fascinating aspects of Shiva's temperament is his ability to embody contradictions. He is both fierce and gentle, destructive and creative, and embodies both the masculine and feminine principles. This ability to reconcile contradictions makes Shiva a powerful symbol of unity and wholeness, and serves as a reminder of the interconnectedness of all things.<br><br>
+            Shiva's temperament is also deeply connected to his role as a transformer and renewer. His destructive powers are not just about destruction, but about clearing the way for new growth and creation. This aspect of his temperament highlights the importance of transformation and renewal in life, and serves as a reminder that sometimes, we need to let go of the old to make way for the new.<br><br>
+            Overall, Shiva's temperament is a complex and multifaceted entity that reflects the richness and depth of his mythology and symbolism. Through his contrasting traits and unpredictable nature, Shiva inspires devotion, introspection, and self-realization in those who seek to understand him. His temperament serves as a reminder of the importance of balance, harmony, and transformation in life, and continues to captivate and inspire devotees to this day.</p>
+      </div>
+      <div id="Health">
+        <h1>Health</h1>
+        <p>Lord Shiva, one of the most revered deities in Hinduism, embodies various aspects that can be linked to health and wellness. His mythology and symbolism offer valuable insights into the importance of balance, harmony, and spiritual growth in maintaining good health.
+            One of the key aspects of Shiva's mythology that can be linked to health is his association with yoga and meditation. As a yogi, Shiva is often depicted in meditative postures, emphasizing the importance of these practices for physical and mental well-being. Yoga and meditation have been widely recognized for their numerous health benefits, including reducing stress, improving flexibility, and enhancing mental clarity. By embracing these practices, individuals can cultivate a sense of inner peace and balance, which is essential for maintaining good health.<br><br>
+            Shiva's role in purifying the universe can also be seen as a symbol of detoxification and cleansing. In Hindu mythology, Shiva is often associated with the Ganges River, which is considered sacred and purifying. This association highlights the importance of cleansing and detoxifying the body and mind to maintain good health. By adopting healthy habits and avoiding toxic substances, individuals can promote their overall well-being and reduce the risk of diseases.<br><br>
+            Moreover, Shiva's temperament and mythology emphasize the importance of balance and harmony in life. As a destroyer of evil and chaos, Shiva's fierce aspect is balanced by his compassionate and nurturing side. This balance is essential for maintaining good health, as excessive stress, anxiety, or negativity can have adverse effects on physical and mental well-being. By cultivating a sense of balance and harmony, individuals can promote their overall health and resilience.<br><br>
+            Shiva's teachings and mythology also highlight the importance of spiritual growth and self-realization. As a symbol of spiritual growth and enlightenment, Shiva's mythology encourages individuals to look beyond their physical and material needs and cultivate a deeper sense of purpose and meaning. By prioritizing spiritual growth and self-realization, individuals can develop a greater sense of inner peace, contentment, and fulfillment, which can contribute to their overall well-being.<br><br>
+            In conclusion, Lord Shiva's mythology offers valuable insights into the importance of balance, harmony, and spiritual growth in maintaining good health. By embracing yoga and meditation, detoxification and cleansing, and cultivating a sense of balance and harmony, individuals can promote their overall well-being and reduce the risk of diseases. As a symbol of spiritual growth and enlightenment, Shiva's mythology continues to inspire devotion and introspection, guiding individuals toward a path of health, happiness, and fulfillment.</p>
+      </div>
+      <div id="Apperance-around-the-world">
+        <h1>Apperance around the world</h1>
+        <p>Lord Shiva's appearance and significance vary across cultures and regions, reflecting the diversity of Hinduism and its influence on other traditions. Here's a glimpse into his representation around the world:</p>
+            
+            <h3> Forms and Iconography</h3>
+            <ul>
+                <li>Nataraja: Shiva as the cosmic dancer, symbolizing creation and destruction.</li>
+                <li>Ardhanarishvara: Half-man, half-woman form, representing the balance of male and female energies.</li>
+                <li>Bhairava: Fierce guardian with a dog, embodying protection and justice.</li>
+                <li>Gangadhara: Bearer of the river Ganga, signifying spiritual growth and purification .</li>
+            </ul>
+            <h3>Regional Representations</h3>
+               <ul>
+                <li>India: Shiva is revered as a supreme deity in Shaivism, with various temples and shrines dedicated to him.</li>
+                <li>Central Asia: Shiva's iconography was popularized through the Hephthalite Empire and Kushan Empire, influencing art and culture.</li>
+                <li>China and Taiwan: Maheśvara (Dàzìzàitiān) is revered as one of the Twenty Devas, protecting the Buddhist dharma.</li>
+                <li>Buddhist Shrines: Shiva is depicted in Buddhist art and shrines, such as the Kizil Caves in Xinjiang.</li>
+               </ul>
+            <h3>Symbolism and Significance</h3>
+            <ul>
+                <li>Tiger Skin: Shiva's association with tiger skin represents his power and authority.</li>
+                <li> Trident: The trident (Trishula) symbolizes Shiva's role as a destroyer and protector.</li>
+                <li> Blue Throat: Shiva's blue throat, resulting from drinking poison, signifies his ability to transform negativity into positivity .</li>
+            </ul>
+            <h3> Apperance in the world is like below</h3>
+            <img src="data:image/jpeg;base64,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">
+            <img src="data:image/jpeg;base64,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">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPRqWloczEs1VDrqeN-zVIZEVEkmPPkN1nSA&s">
+      </div>
         <footer>
-            <h1>Har Har Shambhu</h1>
+            <h1>© Har Har Shambhu</h1>
         </footer>
     </body>
 </html>
