@@ -1,0 +1,6 @@
+header{
+    display: grid;
+    justify-content:space-between;
+    padding: 30px;
+    margin: 30px;
+}
