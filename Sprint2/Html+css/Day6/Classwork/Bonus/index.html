@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bonus Task</title>
+        <style>
+            .task3 .box {
+                display: inline-block;
+                width: 60px;
+                height: 60px;
+                margin: 5px;
+                background: #ccc;
+                text-align: center;
+                line-height: 60px;
+            }
+             /* Students apply styles here using :nth-child() */
+             box:nth-child(3n){
+                color:grey;
+            }
+            li:not(:nth-child(2n)){
+                font-weight: bold;
+            }
+            li:nth-child(4n){
+                color: red;
+            }
+            tr:nth-child(2n){
+                color:lightgrey;
+            }
+            tr:nth-child(3){
+                background-color:yellow;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Task 1</h1>
+            <!-- TASK: Style every odd item with bold text, and every 4th with red color -->
+            <ul class="task1">
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Cherry</li>
+                <li>Date</li>
+                <li>Elderberry</li>
+                <li>Fig</li>
+            </ul>
+        </div>
+        <div>
+            <h1>Task 2</h1>
+            <!-- TASK: Make every second row light gray, and highlight the 3rd row -->
+            <table class="task2" border="1">
+                <tr><td>Row 1</td></tr>
+                <tr><td>Row 2</td></tr>
+                <tr><td>Row 3</td></tr>
+                <tr><td>Row 4</td></tr>
+                <tr><td>Row 5</td></tr>
+            </table>
+        </div>
+        <div>
+            <h1>Task 3</h1>
+            <!-- TASK: Change background color of every 3rd box and add a border to the first one -->
+            <div class="task3">
+                <div class="box" style="border-style: dashed;">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+                <div class="box">4</div>
+                <div class="box">5</div>
+                <div class="box">6</div>
+            </div>
+        </div>
+        <div>
+            <h1>Task 4</h1>
+            <!-- TASK: Style the 2nd paragraph inside each section differently -->
+            <section class="task4">
+            <p>Intro</p>
+            <p>Details</p>
+            </section>
+
+            <section class="task4" style="background-color: aqua;">
+            <p>Overview</p>
+            <p>Stats</p>
+            </section>
+
+        </div>
+    </body>
+</html>
