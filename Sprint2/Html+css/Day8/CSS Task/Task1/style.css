@@ -1,0 +1,49 @@
+h1{
+    display: flex;
+    justify-content: center;
+}
+div{
+    border-style: solid;
+    gap:20px;
+    display: grid;
+    padding: 10px;
+}
+q1{
+    padding: 15px;
+    background-color: lightblue;
+    border-width: 3px;
+    border-color: black;
+    margin:20px;
+}
+q2{
+    padding-top: 10px ;
+    padding-right: 20px ;
+    padding-bottom: 30px ;
+    padding-left: 40px;
+}
+q3_1{
+    margin: 10px;
+}
+q3_2{
+    padding: 10px;
+}
+q4{
+    display: flex;
+}
+q5{
+    justify-content: center;
+    align-items: center;
+}
+q6{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+q7{
+    display: flex;
+    gap: 20px;
+}
+q8{
+    display: flex;
+    flex-wrap: wrap;
+}
