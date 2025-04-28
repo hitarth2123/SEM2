@@ -1,0 +1,28 @@
+.container {
+  background: #fff;
+  padding: 20px;
+
+  border-radius: 8px;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  float: left;
+  shape-outside: circle();
+  clip-path: circle();
+  margin-right: 30px;
+  background-image: url('https://imgs.search.brave.com/QKYgVCi0LjGb7evQ7k69xzg0lhiQrz3k4mr2t7fRMsg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2VkLzg4/L2EyL2VkODhhMmEy/ZTAxMTMwNDViZmNj/YmNlZGVmMWU5ZjUx/LmpwZw');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+h1 {
+  margin-top: 0;
+  font-size: 2em;
+  font-family: serif;
+  font-weight: bold;
+}
