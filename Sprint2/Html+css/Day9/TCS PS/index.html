@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TCS PS</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+      <div>
+            <div>
+                <header>TCS PS</header>
+            </div>
+            <div>
+                <h1>Task 1</h1>
+                <div class="box"></div>
+            </div>
+            <div>
+                <h1>Task 2</h1>
+                <div class="circle"></div>
+            </div>
+            <div>
+                <h1>Task 3</h1>
+                <div class="bouncer"></div>
+            </div>
+            <div>
+                <h1>Task 4</h1>
+                <div class="mover"></div>
+            </div>
+            <div>
+                <h1>Task 5</h1>
+                <div class="box1"></div>
+                <div class="box2"></div>
+                <div class="box3"></div>
+                <div class="box4"></div>
+            </div>
+            <div>
+                <h1>Task 6</h1>
+                <div class="grow-box"></div>
+            </div>
+            <div>
+                <h1>Task 7</h1>
+                <div class="boxs"></div>
+            </div>
+            <div>
+                <h1>Task 8</h1>
+                <div class="pauser" id="animateBox"></div>
+                <button onclick="togglePlay()">Pause/Play</button>
+                <script>
+                    function togglePlay() {
+                    const animateBox = document.getElementById("animateBox");
+                    const currentState = animateBox.style.animationPlayState || 'running';
+                    animateBox.style.animationPlayState = currentState === 'running' ? 'paused' : 'running';
+                    }
+                </script>
+            </div>
+            <div>
+                <h1>Task 9</h1>
+                <div class="loader"></div>
+            </div>
+            <div>
+                <h1>Task 10</h1>
+                <button class="button">Hover me</button>
+            </div>
+      </div>
+    </body>
+</html>

@@ -1,0 +1,374 @@
+
+/* Base Styles */
+:root {
+    --color-happy: #4ae92a;
+    --color-meh: #ee9d33;
+    --color-sad: #1ce6df;
+    --color-accent: #FF5252;
+    --color-text: #333333;
+    --color-light: #FFFFFF;
+    --color-bg: #F5F7FA;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.07);
+    --shadow-md: 0 5px 15px rgba(0,0,0,0.08);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.12);
+    --border-radius: 12px;
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    padding: 20px;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 193, 7, 0.05) 0%, transparent 30%),
+        radial-gradient(circle at 80% 60%, rgba(100, 181, 246, 0.07) 0%, transparent 40%),
+        radial-gradient(circle at 40% 80%, rgba(121, 134, 203, 0.05) 0%, transparent 35%);
+    background-attachment: fixed;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px 0;
+    position: relative;
+}
+
+header::before {
+    content: url('https://img.icons8.com/?size=100&id=42763&format=png');
+    font-size: 3rem;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.1;
+}
+
+header::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, var(--color-happy), var(--color-sad));
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+h1 {
+    color: var(--color-text);
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.journal-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    position: relative;
+}
+
+.journal-container::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, 
+        rgba(32, 255, 7, 0.3), 
+        rgba(246, 101, 34, 0.3), 
+        rgba(59, 251, 239, 0.3));
+    transform: translateX(-50%);
+    z-index: -1;
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .journal-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .journal-container::before {
+        display: block;
+    }
+    
+    .entry:nth-child(odd) {
+        transform: translateX(-20px);
+    }
+    
+    .entry:nth-child(even) {
+        transform: translateX(20px);
+    }
+}
+
+/* Mood Entry Card Styles */
+.entry {
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-light);
+}
+
+/* Hover effect on cards */
+.entry:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Mood-specific styles */
+.happy {
+    border-left: 6px solid var(--color-happy);
+}
+
+.happy::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle at top right, rgba(255, 193, 7, 0.2), transparent 70%);
+    border-bottom-left-radius: 100%;
+    z-index: 0;
+}
+
+.meh {
+    border-left: 6px solid var(--color-meh);
+}
+
+.meh::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle at top right, rgba(100, 181, 246, 0.2), transparent 70%);
+    border-bottom-left-radius: 100%;
+    z-index: 0;
+}
+
+.sad {
+    border-left: 6px solid var(--color-sad);
+}
+
+.sad::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle at top right, rgba(121, 134, 203, 0.2), transparent 70%);
+    border-bottom-left-radius: 100%;
+    z-index: 0;
+}
+
+.entry h2 {
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+.entry p {
+    color: #555;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    line-height: 1.7;
+}
+
+/* Date display */
+.entry .date {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Emoji before title using ::before */
+.happy h2::before {
+    content: "😀 ";
+    font-size: 1.8rem;
+    vertical-align: middle;
+    margin-right: 5px;
+    transition: transform 0.4s ease;
+    display: inline-block;
+}
+
+.meh h2::before {
+    content: "😐 ";
+    font-size: 1.8rem;
+    vertical-align: middle;
+    margin-right: 5px;
+    transition: transform 0.4s ease;
+    display: inline-block;
+}
+
+.sad h2::before {
+    content: "😢 ";
+    font-size: 1.8rem;
+    vertical-align: middle;
+    margin-right: 5px;
+    transition: transform 0.4s ease;
+    display: inline-block;
+}
+
+/* Emoji change on hover */
+.happy:hover h2::before {
+    content: "🤩 ";
+    transform: rotate(10deg) scale(1.2);
+}
+
+.meh:hover h2::before {
+    content: "🙂 ";
+    transform: rotate(10deg) scale(1.2);
+}
+
+.sad:hover h2::before {
+    content: "🤗 ";
+    transform: rotate(10deg) scale(1.2);
+}
+
+/* First letter styling */
+.entry p::first-letter {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-accent);
+    font-family: 'Dancing Script', cursive;
+    margin-right: 3px;
+    float: left;
+    line-height: 1;
+    padding: 0 5px 5px 0;
+}
+
+/* Like button styles */
+.like-button {
+    background: none;
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    font-family: 'Poppins', sans-serif;
+}
+
+.like-button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.like-button:hover {
+    color: white;
+}
+
+.like-button:hover::before {
+    width: 100%;
+}
+
+.like-button:active {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 82, 82, 0.3);
+}
+
+/* Decorative line after each entry */
+.entry::after {
+    content: "•••";
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #ccc;
+    letter-spacing: 8px;
+    font-size: 1.2rem;
+}
+
+/* Add a new entry button */
+.add-entry {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 82, 82, 0.3);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.add-entry:hover {
+    transform: scale(1.1) rotate(90deg);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.3rem;
+    }
+    
+    .entry {
+        padding: 25px;
+    }
+    
+    .entry:hover {
+        transform: translateY(-5px);
+    }
+    
+    .entry h2 {
+        font-size: 1.4rem;
+    }
+    
+    .add-entry {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        right: 20px;
+        bottom: 20px;
+    }
+}

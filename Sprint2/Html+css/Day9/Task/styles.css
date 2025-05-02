@@ -1,0 +1,106 @@
+.hi{
+    border-style: solid;
+    border-width: 3px;
+    display: grid;
+    justify-content: center;
+}
+div{
+    border-style: solid;
+    gap:20px;
+    padding: 10px;
+}
+.box {
+    width: 100px;
+    height: 100px;
+    animation: colorChange 4s;
+  }
+
+@keyframes colorChange {
+    from { background-color: red; }
+    to { background-color: yellow; }
+  }
+.multi {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation: moveColor 5s forwards;
+  }
+
+@keyframes moveColor {
+    0%   { left: 0; background: red; }
+    16%  { left: 50px; background: orange; }
+    32%  { left: 100px; background: yellow; }
+    64% { left: 200px; background: green; }
+    80%  { left: 100px; background: yellow; }
+    96%  { left: 50px; background: orange; }
+    100%   { left: 0; background: red; }
+  }
+.pulse {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: blue;
+    animation: pulseAnim 1s infinite alternate;
+  }
+
+@keyframes pulseAnim {
+    from { transform: scale(1); }
+    to   { transform: scale(1.2); }
+  }
+
+.hover-btn:hover {
+    background-color: lightgreen;
+  }
+
+input:focus {
+    border: 2px solid royalblue;
+    outline: none;
+  }
+
+.q6:first-child {
+    color: red;
+  }
+
+h2::before {
+    content: "🔹 ";
+  }
+
+p::first-letter {
+    font-size: 200%;
+    color: darkorange;
+  }
+
+.q9::marker {
+    content: "➤ ";
+    color: purple;
+  }
+
+.shine-btn {
+    position: relative;
+    padding: 12px 30px;
+    background: #3498db;
+    color: white;
+    border: none;
+    overflow: hidden;
+    font-size: 16px;
+  }
+
+.shine-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-20deg);
+  }
+
+.shine-btn:hover::after {
+    animation: slide-shine 0.75s linear forwards;
+  }
+
+@keyframes slide-shine {
+    to { left: 125%; }
+  }
+
