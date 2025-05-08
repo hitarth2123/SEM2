@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Exercises</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Flexbox Card Layout</h1>
+        <div class="card-container">
+            <div class="card">
+                <h2>Card 1</h2>
+                <p>This is a sample card with some content.</p>
+                <button>Learn More</button>
+            </div>
+            <div class="card">
+                <h2>Card 2</h2>
+                <p>This card has slightly more content to demonstrate equal heights.</p>
+                <button>Learn More</button>
+            </div>
+            <div class="card">
+                <h2>Card 3</h2>
+                <p>This card has even more content to show how flexbox handles varying content sizes.</p>
+                <button>Learn More</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Flexbox Exercises</h1>
+        
+        <section class="exercise">
+            <h2>Exercise 1: Horizontal Navigation Bar</h2>
+            <nav class="navbar">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        </section>
+
+        <section class="exercise">
+            <h2>Exercise 2: Center a Box</h2>
+            <div class="center-box-container">
+                <div class="center-box">
+                    I'm perfectly centered!
+                </div>
+            </div>
+        </section>
+
+        <section class="exercise">
+            <h2>Exercise 3: Responsive Card Row</h2>
+            <div class="card-row">
+                <div class="exercise-card">Card 1</div>
+                <div class="exercise-card">Card 2</div>
+                <div class="exercise-card">Card 3</div>
+            </div>
+        </section>
+
+        <section class="exercise">
+            <h2>Exercise 4: Equal Height Columns</h2>
+            <div class="equal-columns">
+                <div class="column">Short content</div>
+                <div class="column">More content that goes on for a bit longer</div>
+                <div class="column">Even more content that continues on and on and on...</div>
+            </div>
+        </section>
+
+        <section class="exercise">
+            <h2>Exercise 5: Sidebar + Main Content</h2>
+            <div class="layout">
+                <aside class="sidebar">Sidebar</aside>
+                <main class="main-content">Main Content</main>
+            </div>
+        </section>
+
+        <section class="exercise">
+            <h2>Exercise 6: Button Row with Right Aligned Button</h2>
+            <div class="button-row">
+                <button>Button 1</button>
+                <button>Button 2</button>
+                <button>Button 3</button>
+                <button class="right-button">Right Button</button>
+            </div>
+        </section>
+
+        <section class="exercise">
+            <h2>Exercise 7: Vertical Flexbox Navigation</h2>
+            <nav class="vertical-nav">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </nav>
+        </section>
+
+        <section class="exercise">
+            <h2>Exercise 8: Flex Order Change</h2>
+            <div class="order-container">
+                <div class="order-item" style="order: 3;">Item 1</div>
+                <div class="order-item" style="order: 1;">Item 2</div>
+                <div class="order-item" style="order: 2;">Item 3</div>
+            </div>
+        </section>
+
+        <section class="exercise">
+            <h2>Exercise 9: Grow One Box More Than Others</h2>
+            <div class="grow-container">
+                <div class="grow-item">Regular Item</div>
+                <div class="grow-item" style="flex-grow: 2;">Larger Item</div>
+                <div class="grow-item">Regular Item</div>
+            </div>
+        </section>
+
+        <section class="exercise">
+            <h2>Exercise 10: Profile Layout</h2>
+            <div class="profile">
+                <div class="profile-image">
+                    <img src="data:image/jpeg;base64,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" alt="Profile Picture">
+                </div>
+                <div class="profile-info">
+                    <h3>John Doe</h3>
+                    <p>Web Developer</p>
+                    <p>Location: New York</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1208 @@
+/* Base styles for all items */
+.item {
+    padding: 20px;
+    border: 1px solid #333;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+/* Grid section styles */
+.grid-section {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.grid-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.grid-section p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Add some spacing between examples within sections */
+.equal-columns, .rows-example, .gap-example, .placement-example, .areas-example, .centered-example {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Tasks section styles */
+.tasks-section {
+    margin: 40px 0;
+    padding: 30px;
+    background: linear-gradient(120deg, var(--background-color), #e0f7fa);
+    border-radius: 8px;
+}
+
+.task-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.task-card {
+    background: var(--gradient-light);
+    border-radius: 16px;
+    padding: 25px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #e9ecef;
+    border-left: 4px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.task-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.task-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: transparent;
+    border-left: 4px solid var(--accent-color);
+}
+
+.task-card:hover::before {
+    opacity: 0.1;
+}
+
+.task-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.task-card p {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.task-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-card li {
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.task-card li:before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Task Page Styles */
+.task-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px;
+    background: linear-gradient(120deg, var(--background-color), #e0f7fa);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.task-page h1 {
+    color: var(--secondary-color);
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Portfolio Layout Styles */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.header {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, var(--card-background), #f6f7fa);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.header h2 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.header nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.header nav ul li a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(253, 121, 168, 0.8);
+    transform: scale(1.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar {
+    background: linear-gradient(135deg, var(--card-background), #f6f7fa);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    border-left: 3px solid var(--secondary-color);
+}
+
+.sidebar h3 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background: var(--gradient-accent);
+    color: white;
+    box-shadow: 0 4px 15px rgba(253, 121, 168, 0.4);
+    transform: translateX(5px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+}
+
+.content h2 {
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.project {
+    background: linear-gradient(145deg, var(--card-background), #f6f7fa);
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--primary-color);
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: transparent;
+    border-left: 4px solid var(--accent-color);
+    background: var(--gradient-secondary);
+}
+
+.project h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.project p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.tasks-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+    padding: 30px;
+    background: var(--gradient-light);
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+}
+
+/* Responsive Design for Task Pages */
+@media (max-width: 768px) {
+    .task-page {
+        padding: 20px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .header {
+        padding: 20px;
+    }
+
+    .header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .sidebar {
+        padding: 20px;
+    }
+
+    .content {
+        padding: 25px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Dashboard Layout Styles */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.dashboard-header {
+    grid-column: 1 / -1;
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+}
+
+.dashboard-header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.dashboard-header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.dashboard-sidebar {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+.dashboard-sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-sidebar nav ul li {
+    margin-bottom: 10px;
+}
+
+.dashboard-sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-sidebar nav ul li a:hover {
+    background-color: #3498db;
+}
+
+.dashboard-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.widget {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.widget h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.calendar-grid div {
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+/* Resume Layout Styles */
+.resume-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.resume-sidebar {
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.profile img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.resume-sidebar h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.resume-sidebar p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.contact-info, .skills {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.contact-info h3, .skills h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.resume-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.experience-item, .education-item {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.experience-item:last-child, .education-item:last-child {
+    border-bottom: none;
+}
+
+/* Restaurant Menu Styles */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.menu-header {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.menu-header h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.menu-header p {
+    color: #666;
+}
+
+.menu-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.menu-section h3 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.menu-items {
+    display: grid;
+    gap: 15px;
+}
+
+.menu-item {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.menu-item h4 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.menu-item p {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.price {
+    color: #e74c3c;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 5px;
+}
+
+/* News Website Styles */
+.news-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.news-header {
+    grid-column: 1 / -1;
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+}
+
+.news-header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.news-header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.news-header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.news-content {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+}
+
+.featured-article {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.featured-article img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.article {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.news-sidebar {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.popular-stories, .latest-updates {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.popular-stories ul, .latest-updates ul {
+    list-style: none;
+    padding: 0;
+}
+
+.popular-stories ul li, .latest-updates ul li {
+    margin-bottom: 10px;
+}
+
+/* Creative Dashboard Styles */
+.creative-dashboard {
+    margin-top: 20px;
+}
+
+.dashboard-header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.dashboard-header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.dashboard-header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.dashboard-content {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.widget {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.widget.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.widget.medium {
+    grid-column: span 2;
+}
+
+.widget.small {
+    grid-column: span 1;
+}
+
+.chart {
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.stat {
+    background-color: #f9f9f9;
+    padding: 15px;
+    text-align: center;
+}
+
+.stat h4 {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-grid div {
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.notifications {
+    list-style: none;
+    padding: 0;
+}
+
+.notifications li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.icon {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.action-buttons button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-buttons button:hover {
+    background-color: #2980b9;
+}
+
+/* Social Media Layout Styles */
+.social-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.profile-section {
+    grid-row: 1 / -1;
+}
+
+.profile-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.profile-card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.profile-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.profile-stats div {
+    text-align: center;
+}
+
+.profile-stats p {
+    color: #666;
+    margin-top: 5px;
+}
+
+.feed-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.post-form {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.post-form img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.post-form textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.post-options {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.post {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.post-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.post-header h3 {
+    margin: 0;
+    color: #333;
+}
+
+.post-header p {
+    margin: 0;
+    color: #666;
+}
+
+.post img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+.post-actions {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.post-actions button {
+    background-color: transparent;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.comments {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.comment {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.comment img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.trending, .friends {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.trending ul {
+    list-style: none;
+    padding: 0;
+}
+
+.trending ul li {
+    color: #3498db;
+    margin-bottom: 5px;
+}
+
+.friends-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.friend {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.friend img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Blog Layout Styles */
+.blog-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Product Grid Styles */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.product-item {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.product-item h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-item p {
+    color: #666;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.product-item button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-item button:hover {
+    background-color: #2980b9;
+}
+
+/* Photo Gallery Styles */
+.photo-gallery {
+    padding: 20px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.photo-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover {
+    transform: translateY(-5px);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.photo-item p {
+    padding: 15px;
+    color: #333;
+    text-align: center;
+}
+
+/* Portfolio Grid Styles */
+.portfolio-grid {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar content"
+        "footer footer";
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+}
+
+.header {
+    grid-area: header;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+.header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.content {
+    grid-area: content;
+    padding: 20px;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.project {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+/* Equal Width Columns Example */
+.equal-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+/* Rows with Different Heights */
+.rows-example {
+    display: grid;
+    grid-template-rows: 150px auto 50px;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+/* Grid with Gap */
+.gap-example {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/* Grid Item Placement */
+.placement-example {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.span-rows {
+    grid-row: 1 / 3;
+}
+
+/* Grid Template Areas */
+.areas-example {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar content"
+        "footer footer";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 100px 1fr 50px;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.header {
+    grid-area: header;
+    background-color: #e0e0e0;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #d0d0d0;
+}
+
+.content {
+    grid-area: content;
+    background-color: #f0f0f0;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #e0e0e0;
+}
+
+/* Centered Items */
+.centered-example {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+/* Add some spacing between examples */
+.equal-columns, .rows-example, .gap-example, .placement-example, .areas-example, .centered-example {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
