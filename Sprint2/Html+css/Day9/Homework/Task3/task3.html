@@ -3,67 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 3: Blog Layout</title>
+    <title>India-Pakistan Relations Blog</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="task-page">
-        <h1>Task 3: Blog Layout</h1>
-        <div class="blog-grid">
-            <header class="blog-header">
-                <h2>My Blog</h2>
+    <div class="blog-container">
+        <header class="blog-header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-laptop-code"></i>
+                    <h1>Tech Innovations Blog</h1>
+                </div>
                 <nav>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Articles</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="#" class="active">Latest</a></li>
+                        <li><a href="#">AI & ML</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile Tech</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </nav>
-            </header>
+            </div>
+        </header>
 
-            <main class="blog-content">
-                <article>
-                    <h2>Blog Post 1</h2>
-                    <p>Posted on May 7, 2025</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </article>
-                <article>
-                    <h2>Blog Post 2</h2>
-                    <p>Posted on May 6, 2025</p>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </article>
-                <article>
-                    <h2>Blog Post 3</h2>
-                    <p>Posted on May 5, 2025</p>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                </article>
-            </main>
-
-            <aside class="blog-sidebar">
-                <section>
-                    <h3>Categories</h3>
+        <main class="blog-content">
+            <article class="featured-post">
+                <div class="post-image">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3" alt="AI Technology">
+                </div>
+                <div class="post-content">
+                    <h2>Revolutionizing Healthcare with AI: The Future is Here</h2>
+                    <div class="post-meta">
+                        <span><i class="fas fa-calendar"></i> May 9, 2025</span>
+                        <span><i class="fas fa-user"></i> By Dr. Sarah Johnson, AI Healthcare Specialist</span>
+                    </div>
+                    <p>In a groundbreaking development, artificial intelligence is transforming the healthcare industry in ways we never thought possible. From advanced diagnostic tools that can detect diseases years before symptoms appear, to personalized treatment plans tailored to individual genetic profiles, AI is revolutionizing patient care.</p>
+                    <p>The latest breakthroughs include:</p>
                     <ul>
-                        <li><a href="#">Technology</a></li>
-                        <li><a href="#">Design</a></li>
-                        <li><a href="#">Development</a></li>
-                        <li><a href="#">Lifestyle</a></li>
+                        <li>AI-powered cancer detection systems with 99% accuracy</li>
+                        <li>Smart health monitoring devices that predict health issues before they occur</li>
+                        <li>Personalized medicine based on genetic analysis</li>
+                        <li>Virtual health assistants that provide 24/7 medical support</li>
                     </ul>
-                </section>
-                <section>
-                    <h3>Recent Posts</h3>
-                    <ul>
-                        <li><a href="#">Most Recent Post</a></li>
-                        <li><a href="#">Second Recent Post</a></li>
-                        <li><a href="#">Third Recent Post</a></li>
-                    </ul>
-                </section>
-            </aside>
+                    <p>Join us as we explore how these technologies are not just science fiction, but are already saving lives and improving healthcare outcomes around the world. Discover the ethical considerations, implementation challenges, and the exciting future that awaits in AI-powered healthcare.</p>
+                    <a href="#" class="read-more">Read Full Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
 
-            <footer class="blog-footer">
-                <p>&copy; 2025 My Blog. All rights reserved.</p>
-            </footer>
-        </div>
+            <div class="post-grid">
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?ixlib=rb-4.0.3" alt="Web Development">
+                    </div>
+                    <div class="post-content">
+                        <h3>Modern Web Development Trends</h3>
+                        <div class="post-meta">
+                            <span><i class="fas fa-calendar"></i> May 8, 2025</span>
+                            <span><i class="fas fa-user"></i> By Web Developer</span>
+                        </div>
+                        <p>Discover the latest trends in web development including React 18, Next.js 13, and modern UI/UX practices.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3" alt="Mobile Technology">
+                    </div>
+                    <div class="post-content">
+                        <h3>The Future of Mobile Technology</h3>
+                        <div class="post-meta">
+                            <span><i class="fas fa-calendar"></i> May 7, 2025</span>
+                            <span><i class="fas fa-user"></i> By Mobile Tech Expert</span>
+                        </div>
+                        <p>Explore the latest advancements in mobile technology, including 5G, foldable phones, and mobile app development trends.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3" alt="Cybersecurity">
+                    </div>
+                    <div class="post-content">
+                        <h3>Securing Your Digital Future</h3>
+                        <div class="post-meta">
+                            <span><i class="fas fa-calendar"></i> May 6, 2025</span>
+                            <span><i class="fas fa-user"></i> By Cybersecurity Expert</span>
+                        </div>
+                        <p>Learn about the latest cybersecurity threats and how to protect your digital assets in the modern technological landscape.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <aside class="blog-sidebar">
+            <section class="sidebar-section">
+                <h3>Categories</h3>
+                <ul class="category-list">
+                    <li><a href="#" class="active">Latest Tech</a></li>
+                    <li><a href="#">Artificial Intelligence</a></li>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Mobile Technology</a></li>
+                    <li><a href="#">Cybersecurity</a></li>
+                    <li><a href="#">Tech Reviews</a></li>
+                </ul>
+            </section>
+
+            <section class="sidebar-section">
+                <h3>Recent Posts</h3>
+                <div class="recent-posts">
+                    <article class="recent-post">
+                        <div class="post-meta">
+                            <span><i class="fas fa-calendar"></i> May 9, 2025</span>
+                            <span><i class="fas fa-user"></i> By Political Analyst</span>
+                        </div>
+                        <h4><a href="#">India-Pakistan Ceasefire: A New Beginning?</a></h4>
+                    </article>
+                    <article class="recent-post">
+                        <div class="post-meta">
+                            <span><i class="fas fa-calendar"></i> May 8, 2025</span>
+                            <span><i class="fas fa-user"></i> By Defense Expert</span>
+                        </div>
+                        <h4><a href="#">Military Confidence Building Measures</a></h4>
+                    </article>
+                    <article class="recent-post">
+                        <div class="post-meta">
+                            <span><i class="fas fa-calendar"></i> May 7, 2025</span>
+                            <span><i class="fas fa-user"></i> By Regional Analyst</span>
+                        </div>
+                        <h4><a href="#">Regional Impact of Improved Relations</a></h4>
+                    </article>
+                </div>
+            </section>
+
+            <section class="sidebar-section">
+                <h3>Subscribe</h3>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </section>
+        </aside>
+
+        <footer class="blog-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Your go-to source for the latest technology news, trends, and analysis in AI, web development, mobile tech, and cybersecurity.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Latest News</a></li>
+                        <li><a href="#">Archives</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 India-Pakistan Relations Blog. All rights reserved.</p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
