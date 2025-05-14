@@ -1,0 +1,51 @@
+/* .mdiv{
+background-color: blue;
+padding: 20px;
+}
+.sdiv{
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+    border: 5px solid red;
+    color: lightskyblue;
+    display: inline-block;
+    background-color: lavender;
+} */
+/* .mdiv{
+    background-color: blue;
+    padding: 20px;
+}
+.sdiv{
+        width: 21.2%;
+        padding: 10px;
+        margin: 10px;
+        border: 5px solid red;
+        color: darkcyan;
+        display: inline-block;
+        background-color: lavender;
+}
+.sdiv button{
+   
+    margin: 10px;
+    border: 5px double navy;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+} */
+.mbu{
+    padding: 20px;
+    margin: 10px;
+}
+
+.mbu button{
+    border-radius: 10px;
+    font-size: 29px;
+    padding: 10px;
+    margin: 20px;
+}
+.mbu button:hover{
+    background-color: blanchedalmond;
+}
+    

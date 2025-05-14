@@ -1,0 +1,75 @@
+/* button{
+    background-color: aqua;
+    color: red;
+}
+#de{
+    color: red;
+}
+#dee{
+    color: green;
+}
+#deee{
+    color: blue;
+}
+.hE{
+    color: yellow;
+    background-color: lightblue;
+
+}
+.he{
+    color: red;
+    background-color: pink;
+} */
+.cform{
+    border: 6px double rgb(18, 5, 107);
+    width: 50%;
+    padding :20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+}
+.cform label{
+    color: darkred;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+.cform input{
+    width: 90%;
+    padding: 20px;
+    font-size: 22px;
+    color: darkred;
+    font-style: italic;
+    background-color: rgb(160, 160, 249);
+    /* border: 2px dotted rgb(83, 83, 232); */
+    border: none;
+}
+.cform input:focus{
+    /* background-color: rgb(160, 160, 249);
+    border: 2px dotted rgb(83, 83, 232); */
+    /* outline:none; */
+    outline: 6px double red;
+}
+.cform input::placeholder{
+    color: red;
+    font-size: 20px;
+}
+.cform input[type="submit"]{
+    width: 30%;
+    margin: 10px;
+    border: 5px double navy;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.div1{
+    width: 30%;
+    margin: 8px;
+    border: 5px double navy;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
