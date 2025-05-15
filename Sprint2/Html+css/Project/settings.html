@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITM Skills University - Settings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="application.css">
+    <style>
+        .settings-header {
+            background-color: var(--form-background);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .settings-header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        .settings-header p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        
+        .settings-card {
+            background-color: var(--form-background);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+        
+        .settings-card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .settings-card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-right: 15px;
+        }
+        
+        .settings-card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .form-section {
+            margin-bottom: 25px;
+        }
+        
+        .form-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .form-section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .switch-control {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .switch-label {
+            font-size: 14px;
+            color: var(--text-color);
+        }
+        
+        .switch-description {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 3px;
+        }
+        
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+        
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+        
+        .notification-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .notification-item:last-child {
+            border-bottom: none;
+        }
+        
+        .notification-info {
+            flex: 1;
+        }
+        
+        .notification-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+        
+        .notification-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        
+        .notification-controls {
+            display: flex;
+            align-items: center;
+        }
+        
+        .notification-control {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 15px;
+        }
+        
+        .notification-control-label {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+        
+        .device-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: var(--white);
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .device-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-right: 15px;
+        }
+        
+        .device-info {
+            flex: 1;
+        }
+        
+        .device-name {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-color);
+            margin-bottom: 3px;
+        }
+        
+        .device-details {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        
+        .device-current {
+            font-size: 11px;
+            padding: 2px 8px;
+            background-color: #e8f4fc;
+            color: #2196f3;
+            border-radius: 10px;
+            margin-left: 8px;
+        }
+        
+        .device-controls {
+            display: flex;
+            align-items: center;
+        }
+        
+        .device-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: color 0.3s;
+        }
+        
+        .device-btn:hover {
+            color: var(--primary-color);
+        }
+        
+        .device-btn.danger:hover {
+            color: #e74c3c;
+        }
+        
+        @media (max-width: 768px) {
+            .notification-controls {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+            
+            .notification-control {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+               <img src="./itm_logo.png"  width="250px" height="100px" alt="Logo">
+            </div>
+            
+            <div class="welcome-text">
+                <h2>Hello <span class="user-name">Hitarth</span></h2>
+                <p>Change is the end result of all true learning</p>
+            </div>
+            
+            <nav class="side-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                    <li><a href="application.html"><i class="fas fa-user-graduate"></i> Apply Admission</a></li>
+                    <li><a href="routine.html"><i class="fas fa-clipboard-list"></i> Routine</a></li>
+                    <li><a href="support.html"><i class="fas fa-headset"></i> Student Support</a></li>
+                    <li><a href="deposit.html"><i class="fas fa-money-check"></i> Bank Deposite Slip</a></li>
+                    <li class="active"><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-profile">
+                <div class="avatar">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlg1ShiTb5rVmO1JAJfrY_QjCXUjuT0kjPF7IRZWtALvbDxG8uTnR5QYgDQzJN5qkDZjo&usqp=CAU" alt="Hitarth">
+                    <span class="notification-badge"></span>
+                </div>
+                <div class="user-info">
+                    <h3>Hitarth</h3>
+                    <p>hitarth@gmail.com</p>
+                </div>
+                <div class="action-buttons">
+                    <button class="action-btn"><i class="fas fa-cog"></i></button>
+                    <a href="index.html" class="action-btn"><i class="fas fa-sign-out-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <div class="search-container">
+                    <input type="text" placeholder="Search settings..." class="search-input">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                </button>
+            </div>
+            
+            <!-- Settings Header -->
+            <div class="settings-header">
+                <h1>Account Settings</h1>
+                <p>Manage your account settings and preferences</p>
+            </div>
+            
+            <!-- Profile Settings -->
+            <div class="settings-card">
+                <div class="settings-card-header">
+                    <div class="settings-card-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h2 class="settings-card-title">Profile Information</h2>
+                </div>
+                
+                <form id="profile-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" value="Hitarth">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" value="Patel">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" value="hitarth@gmail.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" value="+91 9876543210">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <div class="date-input">
+                                <input type="date" id="dob" value="1999-05-15">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <div class="select-wrapper">
+                                <select id="gender">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                    <option value="prefer-not-say">Prefer not to say</option>
+                                </select>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group" style="width: 100%;">
+                            <label for="bio">Bio</label>
+                            <textarea id="bio" rows="3">Computer Science student at ITM Skills University with a passion for web development and AI.</textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Security Settings -->
+            <div class="settings-card">
+                <div class="settings-card-header">
+                    <div class="settings-card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h2 class="settings-card-title">Security</h2>
+                </div>
+                
+                <div class="form-section">
+                    <h3 class="form-section-title">Change Password</h3>
+                    <form id="password-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="currentPassword">Current Password</label>
+                                <input type="password" id="currentPassword" placeholder="Enter current password">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="newPassword">New Password</label>
+                                <input type="password" id="newPassword" placeholder="Enter new password">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm New Password</label>
+                                <input type="password" id="confirmPassword" placeholder="Confirm new password">
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Update Password</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="form-section">
+                    <h3 class="form-section-title">Two-Factor Authentication</h3>
+                    <div class="switch-control">
+                        <div>
+                            <div class="switch-label">Enable Two-Factor Authentication</div>
+                            <div class="switch-description">Secure your account with an additional layer of security</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3 class="form-section-title">Connected Devices</h3>
+                    <div class="device-item">
+                        <div class="device-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div class="device-info">
+                            <div class="device-name">MacBook Pro <span class="device-current">Current</span></div>
+                            <div class="device-details">Mumbai, India • Last active: Just now</div>
+                        </div>
+                    </div>
+                    
+                    <div class="device-item">
+                        <div class="device-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="device-info">
+                            <div class="device-name">iPhone 14</div>
+                            <div class="device-details">Mumbai, India • Last active: 2 hours ago</div>
+                        </div>
+                        <div class="device-controls">
+                            <button class="device-btn danger"><i class="fas fa-sign-out-alt"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="device-item">
+                        <div class="device-icon">
+                            <i class="fas fa-tablet-alt"></i>
+                        </div>
+                        <div class="device-info">
+                            <div class="device-name">iPad Pro</div>
+                            <div class="device-details">Mumbai, India • Last active: 3 days ago</div>
+                        </div>
+                        <div class="device-controls">
+                            <button class="device-btn danger"><i class="fas fa-sign-out-alt"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Notification Settings -->
+            <div class="settings-card">
+                <div class="settings-card-header">
+                    <div class="settings-card-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h2 class="settings-card-title">Notifications</h2>
+                </div>
+                
+                <div class="form-section">
+                    <div class="switch-control">
+                        <div>
+                            <div class="switch-label">Enable Notifications</div>
+                            <div class="switch-description">Master toggle for all notifications</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3 class="form-section-title">Notification Preferences</h3>
+                    
+                    <div class="notification-item">
+                        <div class="notification-info">
+                            <div class="notification-title">Assignment Reminders</div>
+                            <div class="notification-desc">Get notified about upcoming assignments and deadlines</div>
+                        </div>
+                        <div class="notification-controls">
+                            <div class="notification-control">
+                                <div class="notification-control-label">Email</div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="notification-control">
+                                <div class="notification-control-label">Push</div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="notification-item">
+                        <div class="notification-info">
+                            <div class="notification-title">Course Updates</div>
+                            <div class="notification-desc">Notifications about new course materials and updates</div>
+                        </div>
+                        <div class="notification-controls">
+                            <div class="notification-control">
+                                <div class="notification-control-label">Email</div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="notification-control">
+                                <div class="notification-control-label">Push</div>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="notification-item">
+                        <div class="notification-info">
+                            <div class="notification-title">Payment Reminders</div>
+                            <div class="notification-desc">Get notified about upcoming fee payments</div>
+                        </div>
+                        <div class="notification-controls">
+                            <div class="notification-control">
+                                <div class="notification-control-label">Email</div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="notification-control">
+                                <div class="notification-control-label">Push</div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="notification-item">
+                        <div class="notification-info">
+                            <div class="notification-title">University Announcements</div>
+                            <div class="notification-desc">Important announcements and news from the university</div>
+                        </div>
+                        <div class="notification-controls">
+                            <div class="notification-control">
+                                <div class="notification-control-label">Email</div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="notification-control">
+                                <div class="notification-control-label">Push</div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Privacy Settings -->
+            <div class="settings-card">
+                <div class="settings-card-header">
+                    <div class="settings-card-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h2 class="settings-card-title">Privacy</h2>
+                </div>
+                
+                <div class="form-section">
+                    <div class="switch-control">
+                        <div>
+                            <div class="switch-label">Profile Visibility</div>
+                            <div class="switch-description">Make your profile visible to other students</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="switch-control">
+                        <div>
+                            <div class="switch-label">Show Online Status</div>
+                            <div class="switch-description">Let others see when you're online</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="switch-control">
+                        <div>
+                            <div class="switch-label">Usage Analytics</div>
+                            <div class="switch-description">Share anonymous usage data to help improve the system</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Profile form submission
+            const profileForm = document.getElementById('profile-form');
+            profileForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Profile information updated successfully!');
+            });
+            
+            // Password form submission
+            const passwordForm = document.getElementById('password-form');
+            passwordForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const currentPassword = document.getElementById('currentPassword').value;
+                const newPassword = document.getElementById('newPassword').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                
+                if (!currentPassword || !newPassword || !confirmPassword) {
+                    alert('Please fill all password fields');
+                    return;
+                }
+                
+                if (newPassword !== confirmPassword) {
+                    alert('New passwords do not match');
+                    return;
+                }
+                
+                alert('Password updated successfully!');
+                this.reset();
+            });
+            
+            // Device logout buttons
+            const deviceBtns = document.querySelectorAll('.device-btn.danger');
+            deviceBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const deviceName = this.closest('.device-item').querySelector('.device-name').textContent;
+                    if (confirm(`Are you sure you want to log out from ${deviceName}?`)) {
+                        this.closest('.device-item').remove();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITM Skills University - Bank Deposit Slip</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="application.css">
+    <style>
+        /* Deposit slip page specific styling */
+        .deposit-header {
+            background-color: var(--form-background);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .deposit-header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        .deposit-header p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        
+        .bank-info-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .bank-info-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .bank-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .bank-detail-item {
+            margin-bottom: 5px;
+        }
+        
+        .bank-detail-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 3px;
+            display: block;
+        }
+        
+        .bank-detail-value {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+        
+        .copy-btn {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 14px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        
+        .tabs-container {
+            background-color: var(--form-background);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+        
+        .tabs-nav {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 25px;
+        }
+        
+        .tab-btn {
+            padding: 12px 20px;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-light);
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .upload-container {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .upload-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin: 0 auto 20px;
+        }
+        
+        .upload-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        .upload-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .file-input {
+            display: none;
+        }
+        
+        .upload-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+        
+        .upload-btn i {
+            margin-right: 8px;
+        }
+        
+        .upload-btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .drag-area {
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 20px;
+            transition: var(--transition);
+        }
+        
+        .drag-area.active {
+            border-color: var(--primary-color);
+            background-color: var(--primary-light);
+        }
+        
+        .deposit-history {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .history-table th, .history-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .history-table th {
+            font-weight: 600;
+            color: var(--secondary-color);
+            background-color: #f8f8f8;
+            font-size: 14px;
+        }
+        
+        .history-table td {
+            font-size: 14px;
+            color: var(--text-color);
+        }
+        
+        .history-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .status-verified {
+            background-color: #e6f7ed;
+            color: #28a745;
+        }
+        
+        .status-pending {
+            background-color: #fff8e6;
+            color: #f5a623;
+        }
+        
+        .status-rejected {
+            background-color: #ffeeee;
+            color: #e74c3c;
+        }
+        
+        .action-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        
+        .action-link:hover {
+            text-decoration: underline;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .empty-icon {
+            font-size: 50px;
+            color: var(--text-muted);
+            opacity: 0.3;
+            margin-bottom: 15px;
+        }
+        
+        .empty-text {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .tabs-nav {
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 5px;
+            }
+            
+            .bank-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .history-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+               <img src="./itm_logo.png"  width="250px" height="100px" alt="Logo">
+            </div>
+            
+            <div class="welcome-text">
+                <h2>Hello <span class="user-name">Hitarth</span></h2>
+                <p>Change is the end result of all true learning</p>
+            </div>
+            
+            <nav class="side-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                    <li><a href="application.html"><i class="fas fa-user-graduate"></i> Apply Admission</a></li>
+                    <li><a href="routine.html"><i class="fas fa-clipboard-list"></i> Routine</a></li>
+                    <li><a href="support.html"><i class="fas fa-headset"></i> Student Support</a></li>
+                    <li class="active"><a href="deposit.html"><i class="fas fa-money-check"></i> Bank Deposite Slip</a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-profile">
+                <div class="avatar">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlg1ShiTb5rVmO1JAJfrY_QjCXUjuT0kjPF7IRZWtALvbDxG8uTnR5QYgDQzJN5qkDZjo&usqp=CAU" alt="Hitarth">
+                    <span class="notification-badge"></span>
+                </div>
+                <div class="user-info">
+                    <h3>Hitarth</h3>
+                    <p>hitarth@gmail.com</p>
+                </div>
+                <div class="action-buttons">
+                    <button class="action-btn"><i class="fas fa-cog"></i></button>
+                    <a href="index.html" class="action-btn"><i class="fas fa-sign-out-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <div class="search-container">
+                    <input type="text" placeholder="Search transaction..." class="search-input">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                </button>
+            </div>
+            
+            <!-- Deposit Header -->
+            <div class="deposit-header">
+                <h1>Bank Deposit Management</h1>
+                <p>Upload your bank deposit slips for fee payments and manage your transaction history.</p>
+                
+                <div class="bank-info-card">
+                    <h3>ITM University Bank Account Details</h3>
+                    <div class="bank-details">
+                        <div class="bank-detail-item">
+                            <span class="bank-detail-label">Account Name</span>
+                            <span class="bank-detail-value">ITM Skills University</span>
+                        </div>
+                        <div class="bank-detail-item">
+                            <span class="bank-detail-label">Account Number</span>
+                            <span class="bank-detail-value">1234567890123456 <button class="copy-btn" data-copy="1234567890123456"><i class="fas fa-copy"></i></button></span>
+                        </div>
+                        <div class="bank-detail-item">
+                            <span class="bank-detail-label">Bank Name</span>
+                            <span class="bank-detail-value">State Bank of India</span>
+                        </div>
+                        <div class="bank-detail-item">
+                            <span class="bank-detail-label">IFSC Code</span>
+                            <span class="bank-detail-value">SBIN0012345 <button class="copy-btn" data-copy="SBIN0012345"><i class="fas fa-copy"></i></button></span>
+                        </div>
+                        <div class="bank-detail-item">
+                            <span class="bank-detail-label">Branch</span>
+                            <span class="bank-detail-value">Tech Park, Mumbai</span>
+                        </div>
+                        <div class="bank-detail-item">
+                            <span class="bank-detail-label">Account Type</span>
+                            <span class="bank-detail-value">Current Account</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tabs Container -->
+            <div class="tabs-container">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-tab="upload">Upload Deposit Slip</button>
+                    <button class="tab-btn" data-tab="history">Transaction History</button>
+                    <button class="tab-btn" data-tab="pending">Pending Verifications</button>
+                </div>
+                
+                <!-- Upload Tab -->
+                <div class="tab-content active" id="upload-tab">
+                    <div class="upload-container">
+                        <div class="upload-icon">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <h3 class="upload-title">Upload Deposit Slip</h3>
+                        <p class="upload-desc">Please upload a clear scan or photo of your bank deposit slip or transaction receipt. Supported formats: JPG, PNG, PDF (Max size: 2MB)</p>
+                        
+                        <form id="depositForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="paymentType">Payment Type <span class="required">*</span></label>
+                                    <div class="select-wrapper">
+                                        <select id="paymentType" required>
+                                            <option value="">Select Payment Type</option>
+                                            <option value="tuition">Tuition Fee</option>
+                                            <option value="hostel">Hostel Fee</option>
+                                            <option value="exam">Examination Fee</option>
+                                            <option value="admission">Admission Fee</option>
+                                            <option value="other">Other Payment</option>
+                                        </select>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="amount">Amount (INR) <span class="required">*</span></label>
+                                    <input type="number" id="amount" placeholder="Enter payment amount" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="transactionId">Transaction ID/Reference Number <span class="required">*</span></label>
+                                    <input type="text" id="transactionId" placeholder="Enter transaction reference number" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="transactionDate">Transaction Date <span class="required">*</span></label>
+                                    <div class="date-input">
+                                        <input type="date" id="transactionDate" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="drag-area" id="dragArea">
+                                <input type="file" class="file-input" id="fileInput" accept=".jpg, .jpeg, .png, .pdf">
+                                <p>Drag & drop your file here or</p>
+                                <button type="button" class="upload-btn" id="browseBtn">
+                                    <i class="fas fa-cloud-upload-alt"></i> Browse Files
+                                </button>
+                                <p id="fileDetails" style="margin-top: 15px; display: none;">
+                                    <span id="fileName"></span>
+                                    <span id="fileSize"></span>
+                                </p>
+                            </div>
+                            
+                            <div style="margin-top: 25px; text-align: right;">
+                                <button type="submit" class="btn btn-primary" style="min-width: 150px;">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- History Tab -->
+                <div class="tab-content" id="history-tab">
+                    <div class="deposit-history">
+                        <table class="history-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Transaction ID</th>
+                                    <th>Payment Type</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>May 10, 2025</td>
+                                    <td>TXN123456789</td>
+                                    <td>Tuition Fee</td>
+                                    <td>₹45,000</td>
+                                    <td><span class="status-badge status-verified">Verified</span></td>
+                                    <td>
+                                        <a href="#" class="action-link">View</a>
+                                        <a href="#" class="action-link">Download</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Apr 15, 2025</td>
+                                    <td>TXN987654321</td>
+                                    <td>Hostel Fee</td>
+                                    <td>₹25,000</td>
+                                    <td><span class="status-badge status-verified">Verified</span></td>
+                                    <td>
+                                        <a href="#" class="action-link">View</a>
+                                        <a href="#" class="action-link">Download</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Feb 28, 2025</td>
+                                    <td>TXN456789123</td>
+                                    <td>Examination Fee</td>
+                                    <td>₹5,000</td>
+                                    <td><span class="status-badge status-verified">Verified</span></td>
+                                    <td>
+                                        <a href="#" class="action-link">View</a>
+                                        <a href="#" class="action-link">Download</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Pending Tab -->
+                <div class="tab-content" id="pending-tab">
+                    <div class="deposit-history">
+                        <table class="history-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Transaction ID</th>
+                                    <th>Payment Type</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>May 14, 2025</td>
+                                    <td>TXN567891234</td>
+                                    <td>Tuition Fee</td>
+                                    <td>₹45,000</td>
+                                    <td><span class="status-badge status-pending">Pending</span></td>
+                                    <td>
+                                        <a href="#" class="action-link">View</a>
+                                        <a href="#" class="action-link">Cancel</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab Switching
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and content
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content
+                    this.classList.add('active');
+                    document.getElementById(`${tabId}-tab`).classList.add('active');
+                });
+            });
+            
+            // File Upload Functionality
+            const dragArea = document.getElementById('dragArea');
+            const fileInput = document.getElementById('fileInput');
+            const browseBtn = document.getElementById('browseBtn');
+            const fileDetails = document.getElementById('fileDetails');
+            const fileName = document.getElementById('fileName');
+            const fileSize = document.getElementById('fileSize');
+            
+            browseBtn.addEventListener('click', () => {
+                fileInput.click();
+            });
+            
+            fileInput.addEventListener('change', function() {
+                const file = this.files[0];
+                showFileDetails(file);
+            });
+            
+            dragArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dragArea.classList.add('active');
+            });
+            
+            dragArea.addEventListener('dragleave', () => {
+                dragArea.classList.remove('active');
+            });
+            
+            dragArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dragArea.classList.remove('active');
+                
+                const file = e.dataTransfer.files[0];
+                fileInput.files = e.dataTransfer.files;
+                showFileDetails(file);
+            });
+            
+            function showFileDetails(file) {
+                if (file) {
+                    const fileType = file.type;
+                    const validExtensions = ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'];
+                    
+                    if (validExtensions.includes(fileType)) {
+                        const fileReader = new FileReader();
+                        
+                        fileReader.onload = () => {
+                            fileName.textContent = file.name;
+                            
+                            // Convert file size to KB or MB
+                            const fileKB = file.size / 1024;
+                            if (fileKB < 1024) {
+                                fileSize.textContent = `(${fileKB.toFixed(2)} KB)`;
+                            } else {
+                                const fileMB = fileKB / 1024;
+                                fileSize.textContent = `(${fileMB.toFixed(2)} MB)`;
+                            }
+                            
+                            fileDetails.style.display = 'block';
+                        };
+                        
+                        fileReader.readAsDataURL(file);
+                    } else {
+                        alert('Please upload a valid file format (JPG, PNG, PDF)');
+                    }
+                }
+            }
+            
+            // Copy to Clipboard Functionality
+            const copyBtns = document.querySelectorAll('.copy-btn');
+            
+            copyBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const textToCopy = this.getAttribute('data-copy');
+                    navigator.clipboard.writeText(textToCopy).then(() => {
+                        const originalIcon = this.innerHTML;
+                        this.innerHTML = '<i class="fas fa-check"></i>';
+                        
+                        setTimeout(() => {
+                            this.innerHTML = originalIcon;
+                        }, 2000);
+                    });
+                });
+            });
+            
+            // Form Submission
+            const depositForm = document.getElementById('depositForm');
+            
+            depositForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const paymentType = document.getElementById('paymentType').value;
+                const amount = document.getElementById('amount').value;
+                const transactionId = document.getElementById('transactionId').value;
+                const transactionDate = document.getElementById('transactionDate').value;
+                const file = fileInput.files[0];
+                
+                // Validate form
+                if (!paymentType || !amount || !transactionId || !transactionDate || !file) {
+                    alert('Please fill all required fields and upload a deposit slip.');
+                    return;
+                }
+                
+                // Simulate form submission (in a real scenario, this would be an API call)
+                alert('Deposit slip uploaded successfully! It will be verified by our finance team within 48 hours.');
+                
+                // Reset form
+                depositForm.reset();
+                fileDetails.style.display = 'none';
+                
+                // Switch to pending tab
+                document.querySelector('[data-tab="pending"]').click();
+            });
+        });
+    </script>
+</body>
+</html>

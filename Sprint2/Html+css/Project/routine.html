@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITM Skills University - Class Routine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="application.css">
+    <style>
+        /* Routine specific styling */
+        .routine-header {
+            background-color: var(--form-background);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .routine-header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        .routine-header p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        
+        .semester-selector {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .semester-btn {
+            padding: 8px 15px;
+            border-radius: 6px;
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            font-size: 14px;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .semester-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .semester-btn:hover:not(.active) {
+            background-color: #f5f5f5;
+        }
+        
+        .timetable-container {
+            background-color: var(--form-background);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+        
+        .timetable-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .timetable-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .period {
+            color: var(--primary-color);
+        }
+        
+        .view-switch {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .view-btn {
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background-color: var(--white);
+            color: var(--text-light);
+            font-size: 13px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .view-btn.active {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            border-color: var(--primary-light);
+        }
+        
+        .view-btn:hover:not(.active) {
+            background-color: #f5f5f5;
+        }
+        
+        .timetable {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .timetable th, .timetable td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+        }
+        
+        .timetable th:last-child, .timetable td:last-child {
+            border-right: none;
+        }
+        
+        .timetable tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .timetable th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 14px;
+        }
+        
+        .timetable .time-column {
+            width: 100px;
+            font-weight: 500;
+            color: var(--text-light);
+            font-size: 13px;
+        }
+        
+        .class-item {
+            background-color: #f0f7ff;
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 3px solid #4a90e2;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+        
+        .class-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .class-name {
+            font-weight: 500;
+            font-size: 13px;
+            margin-bottom: 3px;
+            color: var(--secondary-color);
+        }
+        
+        .class-details {
+            font-size: 11px;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .class-lab {
+            background-color: #fff0f0;
+            border-left-color: #e74c3c;
+        }
+        
+        .class-tutorial {
+            background-color: #f0fff0;
+            border-left-color: #2ecc71;
+        }
+        
+        .no-class {
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+        
+        .upcoming-classes {
+            background-color: var(--form-background);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .upcoming-heading {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .today-label {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .upcoming-list {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .upcoming-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .upcoming-item:last-child {
+            border-bottom: none;
+        }
+        
+        .class-time {
+            width: 80px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--secondary-color);
+            margin-right: 20px;
+        }
+        
+        .class-info {
+            flex: 1;
+        }
+        
+        .class-title {
+            font-weight: 500;
+            font-size: 15px;
+            color: var(--secondary-color);
+            margin-bottom: 3px;
+        }
+        
+        .class-location {
+            font-size: 13px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+        }
+        
+        .class-location i {
+            font-size: 12px;
+            margin-right: 5px;
+        }
+        
+        .class-status {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-left: 20px;
+        }
+        
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-bottom: 5px;
+        }
+        
+        .status-upcoming {
+            background-color: #f5a623;
+        }
+        
+        .status-active {
+            background-color: #2ecc71;
+        }
+        
+        .status-completed {
+            background-color: #e0e0e0;
+        }
+        
+        .status-text {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        
+        .join-btn {
+            padding: 6px 12px;
+            border-radius: 6px;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 12px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 5px;
+        }
+        
+        .join-btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        @media (max-width: 992px) {
+            .timetable {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            .semester-selector {
+                overflow-x: auto;
+                padding-bottom: 5px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .upcoming-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .class-time {
+                margin-bottom: 10px;
+            }
+            
+            .class-status {
+                align-items: flex-start;
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+               <img src="./itm_logo.png"  width="250px" height="100px" alt="Logo">
+            </div>
+            
+            <div class="welcome-text">
+                <h2>Hello <span class="user-name">Hitarth</span></h2>
+                <p>Change is the end result of all true learning</p>
+            </div>
+            
+            <nav class="side-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                    <li><a href="application.html"><i class="fas fa-user-graduate"></i> Apply Admission</a></li>
+                    <li class="active"><a href="routine.html"><i class="fas fa-clipboard-list"></i> Routine</a></li>
+                    <li><a href="support.html"><i class="fas fa-headset"></i> Student Support</a></li>
+                    <li><a href="deposit.html"><i class="fas fa-money-check"></i> Bank Deposite Slip</a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-profile">
+                <div class="avatar">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlg1ShiTb5rVmO1JAJfrY_QjCXUjuT0kjPF7IRZWtALvbDxG8uTnR5QYgDQzJN5qkDZjo&usqp=CAU" alt="Hitarth">
+                    <span class="notification-badge"></span>
+                </div>
+                <div class="user-info">
+                    <h3>Hitarth</h3>
+                    <p>hitarth@gmail.com</p>
+                </div>
+                <div class="action-buttons">
+                    <button class="action-btn"><i class="fas fa-cog"></i></button>
+                    <a href="index.html" class="action-btn"><i class="fas fa-sign-out-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <div class="search-container">
+                    <input type="text" placeholder="Search for classes, teachers..." class="search-input">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                </button>
+            </div>
+            
+            <!-- Routine Header -->
+            <div class="routine-header">
+                <h1>Schedule Management</h1>
+                <p>Track your classes, interviews, and information sessions</p>
+                
+                <div class="semester-selector">
+                    <button class="semester-btn">Academic Schedule</button>
+                    <button class="semester-btn active">Admission Process</button>
+                    <button class="semester-btn">Information Sessions</button>
+                </div>
+                
+                <div class="summary-card" style="margin-top: 10px;">
+                    <div class="icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="summary-content">
+                        <h3>Admission Progress</h3>
+                        <p>Interview scheduled for <strong>May 16, 2025</strong></p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width:65%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="summary-card" style="margin-top: 10px;">
+                    <div class="icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="summary-content">
+                        <h3>Upcoming Information Call</h3>
+                        <p>May 17, 2025 at 11:00 AM with Admissions Counselor</p>
+                        <button class="btn btn-sm btn-secondary">
+                            <i class="fas fa-calendar-plus"></i> Add to Calendar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interview Schedule -->
+            <div class="timetable-container">
+                <div class="timetable-nav">
+                    <h2 class="timetable-title">Admission Schedule <span class="period">(May 13 - May 19, 2025)</span></h2>
+                    <div class="view-switch">
+                        <button class="view-btn active">Week View</button>
+                        <button class="view-btn">Month View</button>
+                        <button class="view-btn">List View</button>
+                    </div>
+                </div>
+                
+                <table class="timetable">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="time-column">9:00 - 10:30</td>
+                            <td class="no-class">No Events</td>
+                            <td class="no-class">No Events</td>
+                            <td class="no-class">No Events</td>
+                            <td class="no-class">No Events</td>
+                            <td>
+                                <div class="class-item" style="background-color: #ffe9e2; border-left-color: var(--primary-color);">
+                                    <div class="class-name">Admission Interview</div>
+                                    <div class="class-details">
+                                        <span>Room: 105</span>
+                                        <span>Prof. Rajesh</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="time-column">10:45 - 12:15</td>
+                            <td class="no-class">No Events</td>
+                            <td class="no-class">No Events</td>
+                            <td class="no-class">No Events</td>
+                            <td class="no-class">No Events</td>
+                            <td>
+                                <div class="class-item" style="background-color: #e2f5ff; border-left-color: #4a90e2;">
+                                    <div class="class-name">Document Verification</div>
+                                    <div class="class-details">
+                                        <span>Room: 203</span>
+                                        <span>Admin Office</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="time-column">12:15 - 1:15</td>
+                            <td colspan="5" style="text-align: center; color: var(--text-muted);">Lunch Break</td>
+                        </tr>
+                        <tr>
+                            <td class="time-column">1:15 - 2:45</td>
+                            <td class="no-class">No Events</td>
+                            <td class="no-class">No Events</td>
+                            <td class="no-class">No Events</td>
+                            <td>
+                                <div class="class-item" style="background-color: #e8f8e8; border-left-color: #2ecc71;">
+                                    <div class="class-name">Campus Tour</div>
+                                    <div class="class-details">
+                                        <span>Meeting Point: Main Hall</span>
+                                        <span>Student Coordinator</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="no-class">No Events</td>
+                        </tr>
+                        <tr>
+                            <td class="time-column">3:00 - 4:30</td>
+                            <td class="no-class">No Events</td>
+                            <td class="no-class">No Events</td>
+                            <td class="no-class">No Events</td>
+                            <td class="no-class">No Events</td>
+                            <td class="no-class">No Events</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Upcoming Interviews & Info Calls -->
+            <div class="upcoming-classes">
+                <h2 class="upcoming-heading">
+                    Upcoming Events <span class="today-label">May 15, 2025 (Thursday)</span>
+                </h2>
+                
+                <div class="upcoming-list">
+                    <div class="upcoming-item">
+                        <div class="class-time">1:15 PM</div>
+                        <div class="class-info">
+                            <h3 class="class-title">Campus Tour</h3>
+                            <div class="class-location">
+                                <i class="fas fa-map-marker-alt"></i> Main Hall
+                            </div>
+                        </div>
+                        <div class="class-status">
+                            <div class="status-dot status-active"></div>
+                            <div class="status-text">In Progress</div>
+                            <button class="join-btn">View Map</button>
+                        </div>
+                    </div>
+                    
+                    <div class="upcoming-item">
+                        <div class="class-time">May 16, 9:00 AM</div>
+                        <div class="class-info">
+                            <h3 class="class-title">Admission Interview</h3>
+                            <div class="class-location">
+                                <i class="fas fa-map-marker-alt"></i> Room 105
+                            </div>
+                        </div>
+                        <div class="class-status">
+                            <div class="status-dot status-upcoming"></div>
+                            <div class="status-text">Tomorrow</div>
+                            <button class="join-btn">Prepare</button>
+                        </div>
+                    </div>
+                    
+                    <div class="upcoming-item">
+                        <div class="class-time">May 17, 11:00 AM</div>
+                        <div class="class-info">
+                            <h3 class="class-title">Information Call</h3>
+                            <div class="class-location">
+                                <i class="fas fa-phone-alt"></i> Admissions Counselor
+                            </div>
+                        </div>
+                        <div class="class-status">
+                            <div class="status-dot status-upcoming"></div>
+                            <div class="status-text">In 2 days</div>
+                            <button class="join-btn">Remind Me</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Request to Talk Section -->
+            <div class="timetable-container" style="margin-top: 30px;">
+                <div class="timetable-nav">
+                    <h2 class="timetable-title">Need Additional Information?</h2>
+                </div>
+                
+                <div style="padding: 20px; background-color: var(--white); border-radius: 10px;">
+                    <form id="requestCallForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="requestType">I would like to talk about:</label>
+                                <div class="select-wrapper">
+                                    <select id="requestType" required>
+                                        <option value="">Select a topic</option>
+                                        <option value="admission">Admission Process</option>
+                                        <option value="scholarships">Scholarships & Financial Aid</option>
+                                        <option value="hostel">Hostel Accommodation</option>
+                                        <option value="program">Program Curriculum</option>
+                                        <option value="other">Other Topic</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="preferredDate">Preferred Date:</label>
+                                <div class="date-input">
+                                    <input type="date" id="preferredDate" required min="2025-05-16">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="preferredTime">Preferred Time:</label>
+                                <div class="select-wrapper">
+                                    <select id="preferredTime" required>
+                                        <option value="">Select time slot</option>
+                                        <option value="10:00">10:00 AM - 11:00 AM</option>
+                                        <option value="11:00">11:00 AM - 12:00 PM</option>
+                                        <option value="14:00">2:00 PM - 3:00 PM</option>
+                                        <option value="15:00">3:00 PM - 4:00 PM</option>
+                                        <option value="16:00">4:00 PM - 5:00 PM</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="callType">Communication Method:</label>
+                                <div class="select-wrapper">
+                                    <select id="callType" required>
+                                        <option value="phone">Phone Call</option>
+                                        <option value="video">Video Call</option>
+                                        <option value="inperson">In-Person Meeting</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="additionalDetails">Additional Details:</label>
+                            <textarea id="additionalDetails" rows="3" placeholder="Please provide any specific questions or information that would help us prepare for the call"></textarea>
+                        </div>
+                        
+                        <div style="text-align: right;">
+                            <button type="submit" class="btn btn-primary">Request Information Call</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Highlight the current day in the timetable
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const today = new Date().getDay();
+            
+            if (today > 0 && today < 6) { // Monday to Friday
+                const dayIndex = today;
+                const headers = document.querySelectorAll('.timetable th');
+                headers[dayIndex].style.backgroundColor = 'var(--primary-light)';
+                headers[dayIndex].style.color = 'var(--primary-color)';
+                
+                // Highlight cells for today
+                const rows = document.querySelectorAll('.timetable tbody tr');
+                rows.forEach(row => {
+                    const cell = row.querySelectorAll('td')[dayIndex];
+                    if (cell) {
+                        cell.style.backgroundColor = '#fffaf7';
+                    }
+                });
+            }
+            
+            // Handle view switch buttons
+            const viewBtns = document.querySelectorAll('.view-btn');
+            viewBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    viewBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    // Here you would normally switch views, but for this demo we'll just show the week view
+                });
+            });
+            
+            // Handle semester switch buttons
+            const semesterBtns = document.querySelectorAll('.semester-btn');
+            semesterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    semesterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    // Here you would normally load different semester data
+                });
+            });
+            
+            // Handle form submission for requesting information calls
+            const requestCallForm = document.getElementById('requestCallForm');
+            requestCallForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const requestType = document.getElementById('requestType').value;
+                const preferredDate = document.getElementById('preferredDate').value;
+                const preferredTime = document.getElementById('preferredTime').value;
+                const callType = document.getElementById('callType').value;
+                
+                // Validate form
+                if (!requestType || !preferredDate || !preferredTime || !callType) {
+                    alert('Please fill in all required fields');
+                    return;
+                }
+                
+                // Show success message
+                alert('Your information call request has been submitted successfully! You will receive a confirmation email shortly.');
+                
+                // Reset form
+                this.reset();
+                
+                // In a real application, you would send this data to the server
+            });
+            
+            // Set minimum date for the date picker to tomorrow
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const formattedTomorrow = tomorrow.toISOString().split('T')[0];
+            document.getElementById('preferredDate').setAttribute('min', formattedTomorrow);
+        });
+    </script>
+</body>
+</html>
