@@ -1,0 +1,15 @@
+body {
+    font-family: sans-serif;
+    padding: 2rem;
+    }
+    
+    .hidden {
+    display: none;
+    }
+    
+    #popup {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: lightgreen;
+    border: 1px solid green;
+    }
