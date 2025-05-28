@@ -1,0 +1,40 @@
+.click-me-button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    
+}
+
+.click-me-button:hover {
+    border: 2px solid black;
+}
+ 
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+
+.colorCode {
+    border: 2px solid black;
+    margin: 10px;  
+    padding: 5px ;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+h1{
+    font-family: "Dancing Script", cursive;
+    text-align: center;
+    font-size: 80px;
+    padding-top: 30px;
+}
