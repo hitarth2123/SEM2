@@ -1,4 +1,4 @@
-/* Reset and Base Styles
+Reset and Base Styles
 * {
     margin: 0;
     padding: 0;
@@ -252,8 +252,8 @@ h1{
     display: flex;
     justify-content: center;
     margin-bottom: 100px;
-} */
-.t1,.t2{
+}
+/* .t1,.t2{
     border: 2px solid navy;
 }
 .t1 td,.t1 th,.t2 td,.t2 th{
@@ -289,4 +289,4 @@ td:hover{
     scale: 1;
     background-color: aqua;
     color: goldenrod;
-}
+} */

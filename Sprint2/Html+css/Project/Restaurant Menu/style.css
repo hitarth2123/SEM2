@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9; /* Added background color for body */
+}
+
+/* Navbar Styles */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 1rem 0; /* Added padding for navbar */
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-decoration: none; /* Added to prevent underline */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e67e22;
+}
+
+/* Welcome Banner */
+.welcome-banner {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/banner.svg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+    margin-top: 4rem; /* Added margin top for spacing */
+}
+
+.welcome-banner h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold; /* Added font weight for emphasis */
+}
+
+.welcome-banner p {
+    font-size: 1.5rem;
+    margin-top: 1rem; /* Added margin top for spacing */
+}
+
+/* Menu Section */
+.menu-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    background-color: #fff; /* Added background color for section */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Added box shadow for depth */
+}
+
+.menu-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+    font-size: 2rem; /* Adjusted font size for emphasis */
+}
+
+.menu-category {
+    margin-bottom: 3rem;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.category-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.menu-category h3 {
+    color: #e67e22;
+    border-bottom: 2px solid #e67e22;
+    padding-bottom: 0.5rem;
+    flex-grow: 1;
+    font-size: 1.5rem; /* Adjusted font size for emphasis */
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.menu-item {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.item-header h4 {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    font-weight: bold; /* Added font weight for emphasis */
+}
+
+.price {
+    color: #e67e22;
+    font-weight: bold;
+    font-size: 1.2rem; /* Adjusted font size for emphasis */
+}
+
+.badge {
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+.recommended .item-header {
+    position: relative;
+}
+
+.recommended .item-header::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    transform: rotate(15deg);
+}
+
+.description {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.5rem; /* Added margin top for spacing */
+}
+
+/* About Section */
+.about-section {
+    background: #f9f9f9 url('images/pattern.svg') repeat;
+    padding: 4rem 1rem;
+    position: relative;
+    overflow: hidden;
+    margin-top: 4rem; /* Added margin top for spacing */
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.95));
+    z-index: 1;
+}
+
+.about-section h2,
+.about-section p {
+    position: relative;
+    z-index: 2;
+}
+
+.about-section h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2rem; /* Adjusted font size for emphasis */
+}
+
+.about-section p {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #666;
+    font-size: 1.2rem; /* Adjusted font size for emphasis */
+}
+
+/* Location Section */
+.location-section {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff; /* Added background color for section */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Added box shadow for depth */
+}
+
+.location-section h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2rem; /* Adjusted font size for emphasis */
+}
+
+.location-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.address {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.map iframe {
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .welcome-banner h1 {
+        font-size: 2.5rem;
+    }
+
+    .welcome-banner p {
+        font-size: 1.2rem;
+    }
+
+    .location-content {
+        grid-template-columns: 1fr;
+    }
+
+    .map iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-items {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-banner h1 {
+        font-size: 2rem;
+    }
+
+    .welcome-banner p {
+        font-size: 1rem;
+    }
+}
