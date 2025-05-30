@@ -1,0 +1,35 @@
+/* Table Styles */
+#fruit-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+#fruit-table th, #fruit-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#fruit-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #f2f2f2;
+    color: #444;
+}
+
+/* Input Box Styles */
+#color {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Button Styles */
+button {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}

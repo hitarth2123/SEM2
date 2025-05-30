@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Input</title>
+    <link rel="stylesheet" href="./answer.css">
+</head>
+<body>
+    <table id="fruit-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Color</th>
+                <th>Calories</th>
+            </tr>
+        </thead>
+        <tbody id="fruit-table-body">
+        </tbody>
+    </table>
+
+    <script>
+        const inventory = [
+            { name: "Banana", color: "Yellow", calories: 105 },
+            { name: "Apple", color: "Red", calories: 95 }, 
+            { name: "Lemon", color: "Yellow", calories: 37 }, 
+            { name: "Strawberry", color: "Red", calories: 33 }, 
+            { name: "Avocado", color: "Green", calories: 160 },
+            { name: "Grapes", color: "Purple", calories: 62 }, 
+            { name: "Kiwi", color: "Green", calories: 42 }
+        ];
+
+        const tableBody = document.getElementById('fruit-table-body');
+        inventory.forEach(item => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${item.name}</td>
+                <td>${item.color}</td>
+                <td>${item.calories}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    </script>
+
+    <input type="text" id="color" value="" placeholder="Enter color"> 
+    <button id="submit">Submit</button>
+    <div id="answer"> </div>
+    <script src="./answer.js"></script>
+</body>
+</html>
+
+
