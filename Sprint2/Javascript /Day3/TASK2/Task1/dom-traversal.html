@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Traversal Examples</title>
+    <style>
+        /* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+h1, h2, h3, h4 {
+    color: #2c3e50;
+}
+
+.container {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Example Section Styling */
+.example-section {
+    margin: 30px 0;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+/* Nested Div Styling */
+.parent {
+    padding: 20px;
+    margin: 15px 0;
+    background-color: #e3f2fd;
+    border: 2px solid #90caf9;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.child {
+    padding: 15px;
+    margin: 10px 0 10px 30px;
+    background-color: #e8f5e9;
+    border: 2px solid #a5d6a7;
+    border-radius: 5px;
+}
+
+.grandchild {
+    padding: 10px;
+    margin: 10px 0 10px 20px;
+    background-color: #fff3e0;
+    border: 2px solid #ffcc80;
+    border-radius: 4px;
+}
+
+/* Button Styling */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.toggle-btn {
+    background-color: #9b59b6;
+    display: block;
+    margin: 10px auto 0;
+}
+
+.toggle-btn:hover {
+    background-color: #8e44ad;
+}
+
+/* Output Area */
+.output {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+    margin: 15px 0;
+    border-left: 4px solid #3498db;
+    font-family: 'Courier New', Courier, monospace;
+    min-height: 60px;
+}
+
+/* Explanation Section */
+.explanation {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+code {
+    background: #f0f0f0;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Highlight classes */
+.highlight {
+    background-color: #fff9c4 !important;
+    box-shadow: 0 0 5px #ffd54f;
+}
+
+.highlight-temp {
+    animation: highlight 2s ease-out;
+}
+
+@keyframes highlight {
+    0% { background-color: #fff9c4; }
+    100% { background-color: inherit; }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DOM Traversal Examples</h1>
+        
+        <!-- Nested Div Structure -->
+        <section class="example-section">
+            <h2>1. Nested Div Structure</h2>
+            <div class="parent" id="parentDiv">
+                Parent Div
+                <div class="child">
+                    First Child Div
+                    <div class="grandchild">
+                        Grandchild Div
+                        <button class="toggle-btn">Toggle Parent Highlight</button>
+                    </div>
+                </div>
+                <div class="child">
+                    Second Child Div
+                    <span>This is a span inside the second child</span>
+                </div>
+                <p>This is a paragraph inside the parent</p>
+            </div>
+        </section>
+
+        <!-- DOM Traversal Examples -->
+        <section class="example-section">
+            <h2>2. DOM Traversal Methods</h2>
+            
+            <div class="demo-buttons">
+                <button id="showParent">Show Parent of Button</button>
+                <button id="showChildren">Show Children of Parent</button>
+                <button id="showClosest">Find Closest Parent with Class</button>
+            </div>
+            
+            <div class="output" id="output">
+                <p>Click the buttons above to see DOM traversal in action.</p>
+            </div>
+        </section>
+
+        <!-- Explanations -->
+        <section class="explanation">
+            <h2>DOM Traversal Concepts</h2>
+            
+            <h3>HTML Nesting and DOM Tree</h3>
+            <p>HTML elements can be nested inside other elements, creating a parent-child relationship. This structure forms a tree-like hierarchy called the DOM (Document Object Model) tree.</p>
+            
+            <h3>parentElement</h3>
+            <p>The <code>parentElement</code> property returns the parent node of an element. It's useful for moving up one level in the DOM tree.</p>
+            
+            <h3>.children vs .childNodes</h3>
+            <ul>
+                <li><code>.children</code>: Returns a live HTMLCollection of child elements (only element nodes).</li>
+                <li><code>.childNodes</code>: Returns a live NodeList of all child nodes, including text nodes and comment nodes.</li>
+            </ul>
+            
+            <h3>.closest() Method</h3>
+            <p>The <code>.closest()</code> method traverses the element and its parents until it finds a node that matches the specified CSS selector. It's useful for finding the nearest ancestor that matches certain criteria.</p>
+            
+            <h3>Event Listeners and Class Toggling</h3>
+            <p>Event listeners can be added to elements to respond to user interactions. The <code>classList.toggle()</code> method is commonly used to add or remove a class from an element, which can be used to change its styling or behavior.</p>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Get DOM elements
+    const output = document.getElementById('output');
+    const toggleBtn = document.querySelector('.toggle-btn');
+    const showParentBtn = document.getElementById('showParent');
+    const showChildrenBtn = document.getElementById('showChildren');
+    const showClosestBtn = document.getElementById('showClosest');
+    const parentDiv = document.getElementById('parentDiv');
+
+    // Function to log to the output div
+    function logToOutput(message) {
+        output.innerHTML = `<p>${message}</p>`;
+    }
+
+    // Function to highlight an element temporarily
+    function highlightElement(element, duration = 2000) {
+        element.classList.add('highlight-temp');
+        setTimeout(() => {
+            element.classList.remove('highlight-temp');
+        }, duration);
+    }
+
+
+    // 1. Toggle highlight on parent when clicking the button
+    toggleBtn.addEventListener('click', function() {
+        // Using parentElement to get the direct parent
+        const parent = this.parentElement;
+        parent.classList.toggle('highlight');
+        
+        logToOutput(`Toggled highlight on the direct parent div.`);
+    });
+
+    // 2. Show parent of the toggle button
+    showParentBtn.addEventListener('click', function() {
+        const parent = toggleBtn.parentElement;
+        logToOutput(`<strong>Parent of the button:</strong> ${parent.tagName}.${parent.className}`);
+        highlightElement(parent);
+    });
+
+    // 3. Show all children of the parent div
+    showChildrenBtn.addEventListener('click', function() {
+        const children = parentDiv.children;
+        let childrenInfo = '<strong>Children of parentDiv:</strong><br>';
+        
+        // Using Array.from to convert HTMLCollection to array for forEach
+        Array.from(children).forEach((child, index) => {
+            childrenInfo += `${index + 1}. ${child.tagName}.${child.className || 'no-class'}<br>`;
+            highlightElement(child, 1000);
+        });
+        
+        // Difference between .children and .childNodes
+        const childNodesCount = parentDiv.childNodes.length;
+        childrenInfo += `<br><strong>Difference:</strong> .children returns ${children.length} elements, `;
+        childrenInfo += `while .childNodes returns ${childNodesCount} nodes (includes text nodes, comments, etc.)`;
+        
+        logToOutput(childrenInfo);
+    });
+
+    // 4. Find closest parent with a specific class
+    showClosestBtn.addEventListener('click', function() {
+        // Using closest() to find the nearest ancestor with class 'parent'
+        const closestParent = toggleBtn.closest('.parent');
+        
+        if (closestParent) {
+            logToOutput(`<strong>Closest parent with class 'parent':</strong> ${closestParent.tagName}.${closestParent.className}`);
+            highlightElement(closestParent);
+            
+            // Scroll to the highlighted element
+            closestParent.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+            logToOutput('No parent with class "parent" found.');
+        }
+    });
+
+    // Initial log
+    logToOutput('Click the buttons above to see DOM traversal in action.');
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date & Time Examples</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .section {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .code {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        button:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+        }
+        .output {
+            background: #e8f4f8;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Date & Time Examples</h1>
+    
+    <!-- Section 1: Current Date/Time -->
+    <div class="section">
+        <h2>1. Current Date/Time</h2>
+        <div class="code" id="currentDateTime"></div>
+        <button id="updateDateTime">Update Time</button>
+        
+        <h3>What is a Date Object?</h3>
+        <p>The JavaScript <code>Date</code> object is a built-in object that stores the date and time. It provides methods for working with dates and times.</p>
+        <p>When you create a new <code>Date()</code> object without any arguments, it's initialized with the current date and time.</p>
+    </div>
+
+    <!-- Section 2: Real-time Clock -->
+    <div class="section">
+        <h2>2. Real-time Clock</h2>
+        <div class="code" id="clock"></div>
+        <button id="startClock">Start Clock</button>
+        <button id="stopClock" disabled>Stop Clock</button>
+        
+        <h3>How setInterval() works</h3>
+        <p><code>setInterval()</code> is a JavaScript function that repeatedly calls a function or executes a code snippet, with a fixed time delay between each call.</p>
+        <p>Syntax: <code>let intervalId = setInterval(function, delayInMilliseconds);</code></p>
+        
+        <h3>clearInterval()</h3>
+        <p><code>clearInterval()</code> stops the interval from running. You need to pass it the ID returned by <code>setInterval()</code>.</p>
+        <p>Syntax: <code>clearInterval(intervalId);</code></p>
+    </div>
+
+    <!-- Section 3: Date Comparison -->
+    <div class="section">
+        <h2>3. Date Comparison</h2>
+        <p>Let's compare two dates to see which one is earlier:</p>
+        <div class="code">
+            const date1 = new Date('2025-05-30T09:00:00');<br>
+            const date2 = new Date('2025-06-15T14:30:00');
+        </div>
+        <button id="compareDates">Compare Dates</button>
+        <div id="comparisonResult" class="output"></div>
+        
+        <h3>How to Compare Dates in JavaScript</h3>
+        <p>In JavaScript, you can compare Date objects directly using comparison operators (<, >, <=, >=, ==, ===, !=, !==).</p>
+        <p>When you compare two Date objects, JavaScript automatically converts them to their numeric representation (timestamp) for comparison.</p>
+        <p>Example: <code>if (date1 < date2) { /* date1 is earlier */ }</code></p>
+    </div>
+
+    <!-- Section 4: Count-up Timer -->
+    <div class="section">
+        <h2>4. Count-up Timer (0 to 10 seconds)</h2>
+        <div class="code" id="timer">0</div>
+        <button id="startTimer">Start Timer</button>
+        <button id="resetTimer">Reset Timer</button>
+        
+        <h3>Timers and Conditions</h3>
+        <p>This example shows how to combine <code>setInterval()</code> with a condition to stop the timer after reaching a certain value.</p>
+        <p>The timer increments every second and stops automatically when it reaches 10 seconds.</p>
+    </div>
+
+    <script>
+        // 1. Current Date/Time
+        function updateCurrentDateTime() {
+            const now = new Date();
+            document.getElementById('currentDateTime').textContent = now.toString();
+        }
+        
+        document.getElementById('updateDateTime').addEventListener('click', updateCurrentDateTime);
+        updateCurrentDateTime(); // Initial display
+
+        // 2. Real-time Clock
+        let clockInterval;
+        
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('clock').textContent = now.toLocaleTimeString();
+        }
+        
+        document.getElementById('startClock').addEventListener('click', function() {
+            updateClock(); // Update immediately
+            clockInterval = setInterval(updateClock, 1000); // Update every second
+            document.getElementById('startClock').disabled = true;
+            document.getElementById('stopClock').disabled = false;
+        });
+        
+        document.getElementById('stopClock').addEventListener('click', function() {
+            clearInterval(clockInterval);
+            document.getElementById('startClock').disabled = false;
+            document.getElementById('stopClock').disabled = true;
+        });
+
+        // 3. Date Comparison
+        document.getElementById('compareDates').addEventListener('click', function() {
+            const date1 = new Date('2025-05-30T09:00:00');
+            const date2 = new Date('2025-06-15T14:30:00');
+            
+            let result;
+            if (date1 < date2) {
+                result = `Date 1 (${date1.toLocaleString()}) is earlier than Date 2 (${date2.toLocaleString()})`;
+            } else if (date1 > date2) {
+                result = `Date 1 (${date1.toLocaleString()}) is later than Date 2 (${date2.toLocaleString()})`;
+            } else {
+                result = 'Both dates are the same';
+            }
+            
+            document.getElementById('comparisonResult').textContent = result;
+        });
+
+        // 4. Count-up Timer
+        let timerInterval;
+        let seconds = 0;
+        const timerElement = document.getElementById('timer');
+        const maxSeconds = 10;
+        
+        function updateTimer() {
+            seconds++;
+            timerElement.textContent = seconds;
+            
+            if (seconds >= maxSeconds) {
+                clearInterval(timerInterval);
+                document.getElementById('startTimer').disabled = false;
+            }
+        }
+        
+        document.getElementById('startTimer').addEventListener('click', function() {
+            clearInterval(timerInterval); // Clear any existing interval
+            seconds = 0;
+            timerElement.textContent = seconds;
+            timerInterval = setInterval(updateTimer, 1000);
+            this.disabled = true;
+        });
+        
+        document.getElementById('resetTimer').addEventListener('click', function() {
+            clearInterval(timerInterval);
+            seconds = 0;
+            timerElement.textContent = seconds;
+            document.getElementById('startTimer').disabled = false;
+        });
+    </script>
+</body>
+</html>

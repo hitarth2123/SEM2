@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini To-Do App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>My To-Do List</h1>
+        <div class="todo-input">
+            <input type="text" id="taskInput" placeholder="Add a new task...">
+            <button id="addTaskBtn">Add Task</button>
+        </div>
+        <ul id="taskList" class="task-list">
+            <!-- Tasks will be added here dynamically -->
+        </ul>
+    </div>
+
+    <div class="faq">
+        <h2>LocalStorage & DOM Manipulation Q&A</h2>
+        
+        <div class="question">1. What is localStorage and how does it differ from sessionStorage?</div>
+        <div class="answer">
+            localStorage is a web storage API that allows you to store key-value pairs in a web browser with no expiration time. Unlike sessionStorage, which clears when the page session ends (when the tab is closed), localStorage persists even when the browser is closed and reopened. In this app, we use localStorage to save tasks so they remain available even after the page is refreshed or the browser is closed.
+        </div>
+
+        <div class="question">2. How do you add an item to localStorage?</div>
+        <div class="answer">
+            You can add an item to localStorage using the setItem() method:
+            <pre>localStorage.setItem('key', 'value');</pre>
+            Note that localStorage can only store strings, so when storing objects or arrays, you need to use JSON.stringify() to convert them to a string first.
+        </div>
+
+        <div class="question">3. How do you retrieve data from localStorage?</div>
+        <div class="answer">
+            You can retrieve data using the getItem() method:
+            <pre>const data = localStorage.getItem('key');</pre>
+            If you stored an object or array, you'll need to parse it back using JSON.parse():
+            <pre>const tasks = JSON.parse(localStorage.getItem('tasks')) || [];</pre>
+        </div>
+
+        <div class="question">4. What is the purpose of the DOMContentLoaded event?</div>
+        <div class="answer">
+            The DOMContentLoaded event fires when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading. We use it to ensure our JavaScript code runs only after the DOM is ready to be manipulated:
+            <pre>document.addEventListener('DOMContentLoaded', function() {
+    // Your code here
+});</pre>
+        </div>
+
+        <div class="question">5. How does this app dynamically update the task list?</div>
+        <div class="answer">
+            The app uses several DOM manipulation techniques:
+            <ul>
+                <li><strong>Adding tasks:</strong> When a new task is added, we create new DOM elements (li, input, span, button) and append them to the task list.</li>
+                <li><strong>Updating tasks:</strong> Event listeners are added to the checkboxes to toggle the 'completed' class and update the task's status in localStorage.</li>
+                <li><strong>Deleting tasks:</strong> Clicking the delete button removes the task from both the DOM and localStorage.</li>
+                <li><strong>Loading tasks:</strong> On page load, we retrieve tasks from localStorage and dynamically generate the task list.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
