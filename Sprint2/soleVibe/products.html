@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop SoleVibes' premium collection of custom footwear. Find running, basketball, training, and lifestyle shoes crafted for your unique style.">
+    <title>Products - SoleVibes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/brand-guide.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.svg" alt="SoleVibes Logo" class="logo">
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="products.html" class="active">Products</a>
+                <a href="customize.html">Customize</a>
+                <a href="contact.html">Contact</a>
+                <a href="cart.html" class="cart-link">
+                    <span class="material-icons">shopping_cart</span>
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="products-page">
+        <section class="products-hero">
+            <h1>Our Collection</h1>
+            <p>Find your perfect pair</p>
+        </section>
+
+        <section class="products-content">
+            <div class="filter-sidebar">
+                <h2>Filters</h2>
+                <div class="filter-group">
+                    <h3>Categories</h3>
+                    <div class="filter-options">
+                        <label><input type="checkbox" value="running"> Running</label>
+                        <label><input type="checkbox" value="basketball"> Basketball</label>
+                        <label><input type="checkbox" value="training"> Training</label>
+                        <label><input type="checkbox" value="lifestyle"> Lifestyle</label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Size</h3>
+                    <div class="filter-options size-grid">
+                        <button class="size-btn">7</button>
+                        <button class="size-btn">7.5</button>
+                        <button class="size-btn">8</button>
+                        <button class="size-btn">8.5</button>
+                        <button class="size-btn">9</button>
+                        <button class="size-btn">9.5</button>
+                        <button class="size-btn">10</button>
+                        <button class="size-btn">10.5</button>
+                        <button class="size-btn">11</button>
+                        <button class="size-btn">11.5</button>
+                        <button class="size-btn">12</button>
+                        <button class="size-btn">12.5</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Price Range</h3>
+                    <div class="filter-options">
+                        <label><input type="radio" name="price" value="0-50"> $0 - $50</label>
+                        <label><input type="radio" name="price" value="51-100"> $51 - $100</label>
+                        <label><input type="radio" name="price" value="101-150"> $101 - $150</label>
+                        <label><input type="radio" name="price" value="151+"> $151+</label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Color</h3>
+                    <div class="filter-options color-grid">
+                        <button class="color-btn" style="background-color: #000000;"></button>
+                        <button class="color-btn" style="background-color: #FFFFFF;"></button>
+                        <button class="color-btn" style="background-color: #FF0000;"></button>
+                        <button class="color-btn" style="background-color: #0000FF;"></button>
+                        <button class="color-btn" style="background-color: #00FF00;"></button>
+                        <button class="color-btn" style="background-color: #FFFF00;"></button>
+                    </div>
+                </div>
+
+                <button class="apply-filters-btn">Apply Filters</button>
+            </div>
+
+            <div class="products-grid-container">
+                <div class="sort-bar">
+                    <select id="sort-options">
+                        <option value="featured">Featured</option>
+                        <option value="price-low-high">Price: Low to High</option>
+                        <option value="price-high-low">Price: High to Low</option>
+                        <option value="newest">Newest Arrivals</option>
+                    </select>
+                </div>
+
+                <div id="products-grid" class="products-grid">
+                    <!-- Products will be dynamically loaded here -->
+                </div>
+
+                <div class="pagination">
+                    <button class="page-btn" disabled>Previous</button>
+                    <span class="page-number">Page 1 of 1</span>
+                    <button class="page-btn">Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About SoleVibes</h3>
+                <p>Crafting personalized footwear that reflects your unique style and personality.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="customize.html">Customize</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#" target="_blank">Instagram</a>
+                    <a href="#" target="_blank">Facebook</a>
+                    <a href="#" target="_blank">Twitter</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> SoleVibes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

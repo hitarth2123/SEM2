@@ -1,0 +1,283 @@
+/* Kids Collection Page Styles */
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/kids-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 300px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        padding: 1rem;
+    }
+}
+/* Navigation Styles */
+.nav-container { 
+    max-width: 1400px; 
+    margin: 0 auto; 
+    padding: 0 2rem; 
+    height: 100%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background: rgba(255, 255, 255, 0.98); 
+    backdrop-filter: blur(10px); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); 
+}
+
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 2.5rem; 
+    align-items: center; 
+    margin: 0; 
+    padding: 0; 
+    font-weight: 600; 
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--color-primary); 
+    font-weight: 600; 
+    font-size: 1.1rem; 
+    transition: all 0.3s ease; 
+    position: relative; 
+    padding: 0.5rem 0; 
+}
+
+.nav-links a::after { 
+    content: ''; 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 0; 
+    height: 2px; 
+    background: var(--color-secondary); 
+    transition: width 0.3s ease; 
+}
+
+.nav-links a:hover::after, 
+.nav-links a.active::after { 
+    width: 100%; 
+}
+
+.nav-links a:hover { 
+    transform: translateY(-2px); 
+}
+
+.nav-links a.active { 
+    color: var(--color-secondary); 
+}
+
+.nav-category { 
+    position: relative; 
+}
+
+.nav-dropdown { 
+    position: absolute; 
+    top: calc(100% + 10px); 
+    left: -100px; 
+    background: rgba(255, 255, 255, 0.98); 
+    backdrop-filter: blur(12px); 
+    min-width: 800px; 
+    padding: 2rem; 
+    border-radius: 12px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+    display: none; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem; 
+    z-index: 1000; 
+    opacity: 0; 
+    transform: translateY(10px); 
+    transition: all 0.3s ease; 
+}
+
+.nav-category:hover .nav-dropdown { 
+    display: grid; 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.nav-column h4 { 
+    font-family: var(--font-display); 
+    font-size: 1.1rem; 
+    margin-bottom: 1.2rem; 
+    color: var(--color-primary); 
+    letter-spacing: 0.5px; 
+}
+
+.nav-column a { 
+    display: block; 
+    padding: 0.6rem 0; 
+    color: var(--color-gray-dark); 
+    font-weight: 500; 
+    font-size: 0.9rem; 
+    transition: all 0.2s ease; 
+}
+
+.nav-column a:hover { 
+    color: var(--color-secondary); 
+    padding-left: 5px; 
+}
+
+.nav-right { 
+    display: flex; 
+    align-items: center; 
+    gap: 2rem; 
+}
+
+.nav-search { 
+    position: relative; 
+}
+
+/* Mega Menu Styles */
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+    padding: 1.5rem;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.nav-item:hover .mega-menu {
+    display: grid;
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 500px;
+}
+
+.mega-menu-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mega-menu-column {
+    padding: 0.5rem 1rem;
+}
+
+.mega-menu-column.featured {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .mega-menu-column.featured {
+        display: block;
+    }
+}
+
+.customizer-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 3rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Shoe Preview Section */
+.preview-panel {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 120px;
+    border: 1px solid #f0f0f0;
+}
+
+.preview-canvas {
+    aspect-ratio: 4/3;
+    background: #f8f8f8;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border: 2px dashed #ddd;
+}
+
+.placeholder-preview {
+    font-size: 1.2rem;
+    color: #888;
+}
+
+.preview-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.view-button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.view-button:hover {
+    background: #f0f0f0;
+}
+
+.view-button.active {
+    background: #333;
+    color: #fff;
+    border-color: #333;
+}

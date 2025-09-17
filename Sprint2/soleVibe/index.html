@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SoleVibes - Premium custom footwear crafted for your unique style. Discover our collection of high-quality shoes.">
+    <title>SoleVibes - Premium Footwear</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/brand-guide.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logo.svg" alt="SoleVibes Logo" height="40">
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="products.html">Products</a>
+                <a href="contact.html">Contact</a>
+                <a href="#cart" class="cart-icon sv-btn-accent">Cart (<span id="cart-count">0</span>)</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Step Into Your Style</h1>
+                <p>Discover the perfect blend of comfort and fashion</p>
+                <div class="hero-cta">
+                    <a href="products.html" class="sv-btn-primary">Shop Collection</a>
+                    <a href="customize.html" class="sv-btn-accent">Design Your Own</a>
+                </div>
+            </div>
+            <div class="hero-features">
+                <div class="feature-card">
+                    <span class="feature-icon">🌟</span>
+                    <h3>Premium Quality</h3>
+                    <p>Crafted with excellence</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🎨</span>
+                    <h3>Custom Design</h3>
+                    <p>Your style, your way</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🚚</span>
+                    <h3>Fast Shipping</h3>
+                    <p>Free on orders over $100</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <h2>Featured Products</h2>
+            <div class="filters">
+                <select id="sport-filter">
+                    <option value="all">All Sports</option>
+                    <option value="running">Running</option>
+                    <option value="basketball">Basketball</option>
+                    <option value="training">Training</option>
+                </select>
+                <select id="size-filter">
+                    <option value="all">All Sizes</option>
+                    <option value="7">US 7</option>
+                    <option value="8">US 8</option>
+                    <option value="9">US 9</option>
+                    <option value="10">US 10</option>
+                </select>
+                <select id="price-filter">
+                    <option value="all">All Prices</option>
+                    <option value="0-50">$0 - $50</option>
+                    <option value="51-100">$51 - $100</option>
+                    <option value="101-150">$101 - $150</option>
+                    <option value="151+">$151+</option>
+                </select>
+            </div>
+            <div id="product-grid" class="product-grid"></div>
+        </section>
+
+        <section id="customize" class="customize">
+            <h2>Design Your Perfect Shoe</h2>
+            <div class="customizer">
+                <div class="product-preview">
+                    <img id="shoe-preview" src="images/shoe-base.jpg" alt="Customizable Shoe">
+                </div>
+                <div class="customization-options">
+                    <div class="color-picker">
+                        <h3>Choose Colors</h3>
+                        <div class="color-options">
+                            <button class="color-btn" data-color="#FF0000" style="background-color: #FF0000;"></button>
+                            <button class="color-btn" data-color="#0000FF" style="background-color: #0000FF;"></button>
+                            <button class="color-btn" data-color="#00FF00" style="background-color: #00FF00;"></button>
+                            <button class="color-btn" data-color="#000000" style="background-color: #000000;"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About SoleVibes</h3>
+                <p>Premium footwear for every style and sport</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@solevibes.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

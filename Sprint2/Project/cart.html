@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - SoleVibe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/cart.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="assets/logo.svg" alt="SoleVibe Logo" class="logo-image" width="200px"> 
+                </a>
+               </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="customize.html">Customize</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-cart">
+                <a href="cart.html" class="cart-icon">🛒</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="cart-main">
+        <div class="cart-container">
+            <h1>Shopping Cart</h1>
+
+            <div class="cart-content">
+                <div class="cart-items">
+                    <!-- Example Cart Item -->
+                    <div class="cart-item">
+                        <div class="item-image">
+                            <div class="placeholder-image">Shoe Image</div>
+                        </div>
+                        <div class="item-details">
+                            <h3>Custom Athletic Shoe</h3>
+                            <p class="item-specs">Size: US 10 | Color: Navy Blue</p>
+                            <p class="item-material">Material: Premium Leather</p>
+                        </div>
+                        <div class="item-quantity">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" value="1" min="1" max="10">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <div class="item-price">$199.99</div>
+                        <button class="remove-item">✕</button>
+                    </div>
+
+                    <!-- Add more cart items dynamically -->
+                </div>
+
+                <div class="cart-summary">
+                    <h2>Order Summary</h2>
+                    <div class="summary-items">
+                        <div class="summary-line">
+                            <span>Subtotal</span>
+                            <span>$199.99</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Shipping</span>
+                            <span>$9.99</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Tax</span>
+                            <span>$20.00</span>
+                        </div>
+                        <div class="summary-total">
+                            <span>Total</span>
+                            <span>$229.98</span>
+                        </div>
+                    </div>
+
+                    <div class="shipping-calculator">
+                        <h3>Estimate Shipping</h3>
+                        <form class="shipping-form">
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <select id="country" required>
+                                    <option value="">Select Country</option>
+                                    <option value="US">United States</option>
+                                    <option value="CA">Canada</option>
+                                    <!-- Add more countries -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="zipcode">ZIP Code</label>
+                                <input type="text" id="zipcode" required>
+                            </div>
+                            <button type="submit" class="calculate-shipping">Calculate</button>
+                        </form>
+                    </div>
+
+                    <a href="checkout.html" class="checkout-btn">Proceed to Checkout</a>
+                    <a href="customize.html" class="continue-shopping">Continue Shopping</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About SoleVibe</h4>
+                <p>Premium custom footwear crafted for your unique style.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📱</a>
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Secure Payments</h4>
+                <div class="payment-icons">
+                    <span>💳</span>
+                    <span>🏦</span>
+                    <span>💰</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SoleVibe. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

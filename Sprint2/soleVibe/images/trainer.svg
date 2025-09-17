@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="300" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+    <!-- Trainer shoe silhouette -->
+    <path d="M80,160 C80,110 150,80 200,80 C250,80 300,90 350,110 C400,130 450,160 450,200 C450,240 400,250 350,250 C300,250 150,250 120,250 C90,250 60,210 80,160 Z" fill="#2ecc71" stroke="#333333" stroke-width="2"/>
+    <!-- Breathable mesh pattern -->
+    <pattern id="mesh" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+        <circle cx="4" cy="4" r="1" fill="#ffffff" fill-opacity="0.3"/>
+    </pattern>
+    <path d="M150,100 C200,90 250,90 300,100 C350,110 400,130 420,150" fill="url(#mesh)"/>
+    <!-- Support structure -->
+    <path d="M120,180 C170,170 220,160 320,170" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <path d="M140,200 C190,190 240,180 340,190" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <!-- Flexible grooves -->
+    <path d="M100,220 L400,220" stroke="#333333" stroke-width="1" stroke-dasharray="5,5"/>
+    <path d="M100,230 L400,230" stroke="#333333" stroke-width="1" stroke-dasharray="5,5"/>
+    <!-- Laces -->
+    <path d="M200,100 L300,120" stroke="#ffffff" stroke-width="2" stroke-dasharray="5,5"/>
+    <path d="M200,120 L300,140" stroke="#ffffff" stroke-width="2" stroke-dasharray="5,5"/>
+    <!-- Dynamic sole -->
+    <path d="M80,240 C150,250 300,250 450,240" fill="none" stroke="#333333" stroke-width="4"/>
+    <!-- Brand logo -->
+    <text x="250" y="150" font-family="Arial" font-size="20" fill="#ffffff" text-anchor="middle">SoleVibes</text>
+    <!-- Training-specific details -->
+    <circle cx="350" cy="130" r="15" fill="none" stroke="#ffffff" stroke-width="1"/>
+    <path d="M340,130 L360,130 M350,120 L350,140" stroke="#ffffff" stroke-width="1"/>
+</svg>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Locator - SoleVibe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/store.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+             <a href="./index.html">
+                 <img src="assets/logo.svg" alt="SoleVibe Logo" class="logo-image" width="200px"> 
+             </a>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-category">
+                    <a href="./mens.html">Men</a>
+                    <div class="nav-dropdown">
+                        <div class="nav-column">
+                            <h4>Featured</h4>
+                            <a href="#">New Releases</a>
+                            <a href="#">Bestsellers</a>
+                            <a href="#">Custom Designs</a>
+                        </div>
+                        <div class="nav-column">
+                            <h4>Shop By Style</h4>
+                            <a href="#">Running</a>
+                            <a href="#">Casual</a>
+                            <a href="#">Athletic</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-category">
+                    <a href="#">Women</a>
+                    <div class="nav-dropdown">
+                        <div class="nav-column">
+                            <h4>Featured</h4>
+                            <a href="#">New Arrivals</a>
+                            <a href="#">Trending</a>
+                            <a href="#">Custom Collection</a>
+                        </div>
+                        <div class="nav-column">
+                            <h4>Shop By Style</h4>
+                            <a href="#">Lifestyle</a>
+                            <a href="#">Fashion</a>
+                            <a href="#">Sport</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="customize.html">Customize</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Sale</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="nav-search">
+                    <input type="text" placeholder="Search" class="search-input">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="nav-cart">
+                <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="store-main">
+        <div class="store-container">
+            <section class="store-header">
+                <h1>Find a Store</h1>
+                <p>Visit us in person to experience our shoes and get expert fitting advice</p>
+                <div class="store-search">
+                    <input type="text" id="store-search-input" placeholder="Enter your location or zip code">
+                    <button id="store-search-btn">Find Stores</button>
+                </div>
+            </section>
+
+            <section class="store-content">
+                <div class="store-map">
+                    <!-- Map placeholder - will be replaced with actual map integration -->
+                    <div class="map-placeholder">
+                        <div class="map-overlay">
+                            <p>Interactive Map</p>
+                            <span>Map will be loaded here</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="store-list">
+                    <div class="store-card">
+                        <h3>SoleVibe Downtown</h3>
+                        <p class="store-address">123 Main Street, New York, NY 10001</p>
+                        <div class="store-details">
+                            <div class="store-hours">
+                                <h4>Store Hours</h4>
+                                <p>Mon-Sat: 10:00 AM - 9:00 PM</p>
+                                <p>Sun: 11:00 AM - 6:00 PM</p>
+                            </div>
+                            <div class="store-contact">
+                                <p>📞 (555) 123-4567</p>
+                                <button class="directions-btn">Get Directions</button>
+                            </div>
+                        </div>
+                        <div class="store-features">
+                            <span class="feature-tag">Custom Fitting</span>
+                            <span class="feature-tag">In-Store Pickup</span>
+                            <span class="feature-tag">Shoe Care</span>
+                        </div>
+                    </div>
+
+                    <div class="store-card">
+                        <h3>SoleVibe Brooklyn</h3>
+                        <p class="store-address">456 Atlantic Ave, Brooklyn, NY 11217</p>
+                        <div class="store-details">
+                            <div class="store-hours">
+                                <h4>Store Hours</h4>
+                                <p>Mon-Sat: 11:00 AM - 8:00 PM</p>
+                                <p>Sun: 12:00 PM - 6:00 PM</p>
+                            </div>
+                            <div class="store-contact">
+                                <p>📞 (555) 987-6543</p>
+                                <button class="directions-btn">Get Directions</button>
+                            </div>
+                        </div>
+                        <div class="store-features">
+                            <span class="feature-tag">Custom Fitting</span>
+                            <span class="feature-tag">Shoe Care</span>
+                        </div>
+                    </div>
+
+                    <div class="store-card">
+                        <h3>SoleVibe Queens</h3>
+                        <p class="store-address">789 Queens Blvd, Queens, NY 11375</p>
+                        <div class="store-details">
+                            <div class="store-hours">
+                                <h4>Store Hours</h4>
+                                <p>Mon-Sat: 10:00 AM - 9:00 PM</p>
+                                <p>Sun: 11:00 AM - 7:00 PM</p>
+                            </div>
+                            <div class="store-contact">
+                                <p>📞 (555) 456-7890</p>
+                                <button class="directions-btn">Get Directions</button>
+                            </div>
+                        </div>
+                        <div class="store-features">
+                            <span class="feature-tag">Custom Fitting</span>
+                            <span class="feature-tag">In-Store Pickup</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About SoleVibe</h4>
+                <p>Premium custom footwear crafted for your unique style.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="store.html">Store Locator</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📱</a>
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Secure Payments</h4>
+                <div class="payment-icons">
+                    <span>💳</span>
+                    <span>🏦</span>
+                    <span>💰</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SoleVibe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/store-locator.js"></script>
+</body>
+</html>

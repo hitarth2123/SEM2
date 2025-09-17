@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Your Shoes - SoleVibe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/customize.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="assets/logo.svg" alt="SoleVibe Logo" class="logo-image" width="200px"> 
+                </a>
+               </div>
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Men</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-column">
+                                    <h3>Footwear</h3>
+                                    <ul>
+                                        <li><a href="#">Sneakers</a></li>
+                                        <li><a href="#">Running Shoes</a></li>
+                                        <li><a href="#">Basketball Shoes</a></li>
+                                        <li><a href="#">Training Shoes</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h3>Collections</h3>
+                                    <ul>
+                                        <li><a href="#">New Arrivals</a></li>
+                                        <li><a href="#">Best Sellers</a></li>
+                                        <li><a href="#">Limited Edition</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column featured">
+                                    <img src="images/mens-featured.jpg" alt="Men's Featured Collection">
+                                    <a href="#" class="featured-link">Shop New Arrivals</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Women</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-column">
+                                    <h3>Footwear</h3>
+                                    <ul>
+                                        <li><a href="#">Sneakers</a></li>
+                                        <li><a href="#">Running Shoes</a></li>
+                                        <li><a href="#">Training Shoes</a></li>
+                                        <li><a href="#">Lifestyle</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h3>Collections</h3>
+                                    <ul>
+                                        <li><a href="#">New Arrivals</a></li>
+                                        <li><a href="#">Best Sellers</a></li>
+                                        <li><a href="#">Limited Edition</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column featured">
+                                    <img src="images/womens-featured.jpg" alt="Women's Featured Collection">
+                                    <a href="#" class="featured-link">Shop New Arrivals</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="customize.html" class="nav-link active">Customize</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Sale</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-column">
+                                    <h3>Men's Sale</h3>
+                                    <ul>
+                                        <li><a href="#">Sneakers</a></li>
+                                        <li><a href="#">Running Shoes</a></li>
+                                        <li><a href="#">Basketball Shoes</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h3>Women's Sale</h3>
+                                    <ul>
+                                        <li><a href="#">Sneakers</a></li>
+                                        <li><a href="#">Running Shoes</a></li>
+                                        <li><a href="#">Training Shoes</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column featured sale">
+                                    <div class="sale-banner">
+                                        <h3>Summer Sale</h3>
+                                        <p>Up to 50% Off</p>
+                                        <a href="#" class="featured-link">Shop Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search...">
+                    <button class="search-btn">🔍</button>
+                </div>
+                <a href="cart.html" class="cart-icon">🛒</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="customize-main">
+        <div class="customizer-container">
+            <div class="shoe-preview">
+                <div class="preview-canvas">
+                    <!-- 3D shoe preview will be rendered here -->
+                    <div class="placeholder-preview">3D Shoe Preview</div>
+                </div>
+                <div class="preview-controls">
+                    <button class="view-button" data-view="front">Front</button>
+                    <button class="view-button" data-view="side">Side</button>
+                    <button class="view-button" data-view="back">Back</button>
+                    <button class="view-button" data-view="top">Top</button>
+                </div>
+            </div>
+
+            <div class="customization-panel">
+                <h2>Customize Your Perfect Pair</h2>
+                
+                <div class="customization-section" data-field="style">
+                <h3>Style</h3>
+                    <div class="style-options">
+                        <button class="style-option" data-style="casual">Casual</button>
+                        <button class="style-option" data-style="athletic">Athletic</button>
+                        <button class="style-option" data-style="formal">Formal</button>
+                    </div>
+                </div>
+
+                <div class="customization-section" data-field="material">
+                <h3>Upper Material</h3>
+                    <div class="material-options">
+                        <div class="material-option" data-material="leather">
+                            <span class="material-swatch leather"></span>
+                            <span class="material-name">Premium Leather</span>
+                        </div>
+                        <div class="material-option" data-material="suede">
+                            <span class="material-swatch suede"></span>
+                            <span class="material-name">Soft Suede</span>
+                        </div>
+                        <div class="material-option" data-material="canvas">
+                            <span class="material-swatch canvas"></span>
+                            <span class="material-name">Canvas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="customization-section" data-field="colors">
+                <h3>Color Selection</h3>
+                    <div class="color-picker">
+                        <div class="color-section" data-part="upper">
+                            <h4>Upper</h4>
+                            <div class="color-options">
+                                <button class="color-option" style="background-color: #000000;"></button>
+                                <button class="color-option" style="background-color: #8B4513;"></button>
+                                <button class="color-option" style="background-color: #8B0000;"></button>
+                                <button class="color-option" style="background-color: #000080;"></button>
+                            </div>
+                        </div>
+                        <div class="color-section" data-part="sole">
+                            <h4>Sole</h4>
+                            <div class="color-options">
+                                <button class="color-option" style="background-color: #FFFFFF;"></button>
+                                <button class="color-option" style="background-color: #000000;"></button>
+                                <button class="color-option" style="background-color: #C9A87C;"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="customization-section" data-field="soleType">
+                <h3>Sole Type</h3>
+                    <div class="sole-options">
+                        <div class="sole-option" data-sole="standard">
+                            <h4>Standard</h4>
+                            <p>Classic comfort and durability</p>
+                            <span class="price-modifier">+$0</span>
+                        </div>
+                        <div class="sole-option" data-sole="cushioned">
+                            <h4>Extra Cushioning</h4>
+                            <p>Enhanced comfort for long wear</p>
+                            <span class="price-modifier">+$20</span>
+                        </div>
+                        <div class="sole-option" data-sole="performance">
+                            <h4>Performance</h4>
+                            <p>Optimized for athletic activity</p>
+                            <span class="price-modifier">+$35</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="customization-section" data-field="size">
+                <h3>Size</h3>
+                    <div class="size-selector">
+                        <select id="shoe-size" required>
+                            <option value="">Select Size</option>
+                            <option value="6">US 6 (EU 39)</option>
+                            <option value="7">US 7 (EU 40)</option>
+                            <option value="8">US 8 (EU 41)</option>
+                            <option value="9">US 9 (EU 42)</option>
+                            <option value="10">US 10 (EU 43)</option>
+                            <option value="11">US 11 (EU 44)</option>
+                            <option value="12">US 12 (EU 45)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="customization-section">
+                    <h3>Custom Artwork</h3>
+                    <div class="artwork-upload">
+                        <input type="file" id="artwork-upload" accept=".jpg,.jpeg,.png,.svg" hidden>
+                        <label for="artwork-upload" class="upload-button">Upload Artwork</label>
+                        <p class="upload-info">Max file size: 5MB. Supported formats: JPEG, PNG, SVG</p>
+                        <div class="artwork-preview" style="display: none;"></div>
+                    </div>
+                </div>
+
+                <div class="price-section">
+                    <div class="price-breakdown"></div>
+                    <div class="price-display">
+                        <span class="price-label">Total:</span>
+                        <span class="price-amount">$199.99</span>
+                    </div>
+                    <button class="add-to-cart-btn" disabled>Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About SoleVibe</h4>
+                <p>Premium custom footwear crafted for your unique style.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📱</a>
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Secure Payments</h4>
+                <div class="payment-icons">
+                    <span>💳</span>
+                    <span>🏦</span>
+                    <span>💰</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SoleVibe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/customizer.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Order confirmation for your custom SoleVibes shoes">
+    <title>Order Confirmation - SoleVibes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles/brand-guide.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.svg" alt="SoleVibes Logo" class="logo">
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="products.html">Products</a>
+                <a href="customize.html">Customize</a>
+                <a href="contact.html">Contact</a>
+                <a href="cart.html" class="cart-link">
+                    <span class="material-icons">shopping_cart</span>
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="confirmation-page">
+        <section class="confirmation-hero">
+            <div class="hero-content">
+                <div class="success-icon">✓</div>
+                <h1>Thank You for Your Order!</h1>
+                <p>Your custom SoleVibes shoes are on the way.</p>
+            </div>
+        </section>
+
+        <section class="confirmation-details">
+            <div class="order-info">
+                <h2>Order Details</h2>
+                <div class="info-row">
+                    <span>Order Number:</span>
+                    <span id="order-id"></span>
+                </div>
+                <div class="info-row">
+                    <span>Order Date:</span>
+                    <span id="order-date"></span>
+                </div>
+                <div class="info-row">
+                    <span>Estimated Delivery:</span>
+                    <span id="delivery-date"></span>
+                </div>
+            </div>
+
+            <div class="shipping-info">
+                <h2>Shipping Information</h2>
+                <div id="shipping-details"></div>
+            </div>
+
+            <div class="next-steps">
+                <h2>What's Next?</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-icon">📧</div>
+                        <h3>Order Confirmation</h3>
+                        <p>Check your email for a detailed order confirmation.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon">🎨</div>
+                        <h3>Production</h3>
+                        <p>Our artisans will begin crafting your custom shoes.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon">📦</div>
+                        <h3>Shipping</h3>
+                        <p>We'll notify you when your order ships with tracking info.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="confirmation-actions">
+                <a href="products.html" class="btn-primary">Continue Shopping</a>
+                <a href="customize.html" class="btn-accent">Design Another Pair</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About SoleVibes</h3>
+                <p>Crafting personalized footwear that reflects your unique style and personality.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="customize.html">Customize</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#" target="_blank">Instagram</a>
+                    <a href="#" target="_blank">Facebook</a>
+                    <a href="#" target="_blank">Twitter</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> SoleVibes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/confirmation.js"></script>
+</body>
+</html>

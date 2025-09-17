@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "Classic Sneakers",
+        "category": "sneaker",
+        "price": 89.99
+    },
+    {
+        "id": 2,
+        "name": "Running Shoes",
+        "category": "men",
+        "price": 119.99
+    }
+]

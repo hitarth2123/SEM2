@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="300" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+    <!-- Basic shoe silhouette -->
+    <path d="M100,150 C100,100 150,80 200,80 C250,80 300,100 350,120 C400,140 450,160 450,200 C450,240 400,250 350,250 C300,250 150,250 120,250 C90,250 80,200 100,150 Z" fill="#f0f0f0" stroke="#333333" stroke-width="2"/>
+    <!-- Shoe details -->
+    <path d="M120,170 C150,160 200,150 250,150 C300,150 350,160 380,170" fill="none" stroke="#666666" stroke-width="1"/>
+    <path d="M150,120 C200,110 250,110 300,120" fill="none" stroke="#666666" stroke-width="1"/>
+    <!-- Laces -->
+    <path d="M200,100 L300,120" stroke="#999999" stroke-width="2" stroke-dasharray="5,5"/>
+    <path d="M200,120 L300,140" stroke="#999999" stroke-width="2" stroke-dasharray="5,5"/>
+    <!-- Sole -->
+    <path d="M100,230 C150,240 300,240 400,230" fill="none" stroke="#333333" stroke-width="3"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <style>
+        .primary { fill: #1a1a1a; }
+        .secondary { fill: #c9a87c; }
+    </style>
+    <circle cx="50" cy="50" r="45" class="primary"/>
+    <path d="M30 40 C40 20, 60 20, 70 40 C75 50, 75 60, 70 70 C60 85, 40 85, 30 70 C25 60, 25 50, 30 40 Z" class="secondary"/>
+    <path d="M40 45 C45 35, 55 35, 60 45 C63 50, 63 55, 60 60 C55 67, 45 67, 40 60 C37 55, 37 50, 40 45 Z" class="primary"/>
+</svg>

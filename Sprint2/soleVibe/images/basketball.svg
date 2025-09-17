@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="300" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+    <!-- Basketball shoe silhouette -->
+    <path d="M50,180 C50,130 120,80 200,80 C280,80 350,100 400,120 C450,140 480,180 480,220 C480,260 450,270 400,270 C350,270 150,270 100,270 C50,270 30,230 50,180 Z" fill="#4a90e2" stroke="#333333" stroke-width="2"/>
+    <!-- High-top detail -->
+    <path d="M100,180 C100,140 150,100 200,100" fill="none" stroke="#333333" stroke-width="2"/>
+    <!-- Ankle support -->
+    <path d="M80,160 C80,120 120,80 180,80" fill="none" stroke="#333333" stroke-width="3"/>
+    <!-- Side panel design -->
+    <path d="M200,100 C250,90 300,90 350,100 C400,110 450,130 460,150" fill="#ffffff" fill-opacity="0.2" stroke="#ffffff" stroke-width="1"/>
+    <!-- Air cushion design -->
+    <path d="M100,250 C200,260 300,260 400,250" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="10,5"/>
+    <!-- Laces -->
+    <path d="M180,120 L280,140" stroke="#ffffff" stroke-width="2" stroke-dasharray="5,5"/>
+    <path d="M180,140 L280,160" stroke="#ffffff" stroke-width="2" stroke-dasharray="5,5"/>
+    <path d="M180,160 L280,180" stroke="#ffffff" stroke-width="2" stroke-dasharray="5,5"/>
+    <!-- Sole -->
+    <path d="M50,250 C150,270 350,270 480,250" fill="none" stroke="#333333" stroke-width="4"/>
+    <!-- Brand logo -->
+    <text x="250" y="180" font-family="Arial" font-size="20" fill="#ffffff" text-anchor="middle">SoleVibes</text>
+    <!-- Basketball pattern -->
+    <circle cx="350" cy="150" r="20" fill="none" stroke="#ffffff" stroke-width="1"/>
+    <path d="M330,150 L370,150 M350,130 L350,170" stroke="#ffffff" stroke-width="1"/>
+</svg>

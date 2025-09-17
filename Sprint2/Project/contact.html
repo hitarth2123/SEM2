@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SoleVibe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/contact.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="assets/logo.svg" alt="SoleVibe Logo" class="logo-image" width="200px"> 
+                </a>
+               </div>
+            <ul class="nav-links">
+                <li class="nav-item has-dropdown">
+                    <a href="#">Men</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-menu-section">
+                                <h3>Categories</h3>
+                                <ul>
+                                    <li><a href="#">Sneakers</a></li>
+                                    <li><a href="#">Running Shoes</a></li>
+                                    <li><a href="#">Basketball Shoes</a></li>
+                                    <li><a href="#">Training Shoes</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-section">
+                                <h3>Collections</h3>
+                                <ul>
+                                    <li><a href="#">New Arrivals</a></li>
+                                    <li><a href="#">Best Sellers</a></li>
+                                    <li><a href="#">Limited Edition</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-section mega-menu-featured">
+                                <img src="images/mens-featured.jpg" alt="Men's Featured Collection">
+                                <div class="mega-menu-featured-content">
+                                    <h3>Summer Collection</h3>
+                                    <p>Discover our latest styles</p>
+                                    <a href="#" class="btn-shop-now">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#">Women</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-menu-section">
+                                <h3>Categories</h3>
+                                <ul>
+                                    <li><a href="#">Sneakers</a></li>
+                                    <li><a href="#">Running Shoes</a></li>
+                                    <li><a href="#">Training Shoes</a></li>
+                                    <li><a href="#">Walking Shoes</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-section">
+                                <h3>Collections</h3>
+                                <ul>
+                                    <li><a href="#">New Arrivals</a></li>
+                                    <li><a href="#">Best Sellers</a></li>
+                                    <li><a href="#">Limited Edition</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-section mega-menu-featured">
+                                <img src="images/womens-featured.jpg" alt="Women's Featured Collection">
+                                <div class="mega-menu-featured-content">
+                                    <h3>Spring Collection</h3>
+                                    <p>Explore new designs</p>
+                                    <a href="#" class="btn-shop-now">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="customize.html">Customize</a></li>
+                <li class="nav-item"><a href="#">Sale</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <button type="button" class="search-button">🔍</button>
+                </div>
+                <a href="cart.html" class="cart-icon">🛒</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contact-main">
+        <section class="contact-hero">
+            <h1>Get in Touch</h1>
+            <p>Have questions about our custom shoes? We're here to help! Reach out to us through any of the channels below.</p>
+        </section>
+
+        <div class="contact-content">
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="order">Order Inquiry</option>
+                            <option value="customization">Customization Question</option>
+                            <option value="shipping">Shipping Information</option>
+                            <option value="returns">Returns & Refunds</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <div class="info-section">
+                    <h2>Contact Information</h2>
+                    <div class="info-item">
+                        <span class="info-icon">📞</span>
+                        <div class="info-content">
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                            <p>Monday - Friday: 9am - 6pm EST</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📧</span>
+                        <div class="info-content">
+                            <h3>Email</h3>
+                            <p>support@solevibe.com</p>
+                            <p>Response within 24 hours</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <div class="info-content">
+                            <h3>Address</h3>
+                            <p>123 Fashion Street</p>
+                            <p>New York, NY 10001</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h2>Follow Us</h2>
+                    <p>Stay updated with our latest designs and promotions.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">📱</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📸</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="map-section">
+            <div class="map-container">
+                Map placeholder - Integration with Google Maps or similar service
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About SoleVibe</h4>
+                <p>Premium custom footwear crafted for your unique style.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📱</a>
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Secure Payments</h4>
+                <div class="payment-icons">
+                    <span>💳</span>
+                    <span>🏦</span>
+                    <span>💰</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SoleVibe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to a server
+            // For now, we'll just show an alert
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
